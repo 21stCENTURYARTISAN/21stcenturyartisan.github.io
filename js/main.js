@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
       music:   'Music / Booking',
       synth:   'Synth Commission',
       design:  'Design Collaboration',
-      food:    'Culinary / Event',
     };
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
