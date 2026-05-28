@@ -95,15 +95,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== CONTACT FORM =====
+  // Pure-frontend: submit opens the user's email client with the form
+  // contents pre-populated as a mailto: draft. No backend / no Formspree.
+  // Honest UX: the user sees and sends the actual email themselves.
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
+    const SUBJECT_LABELS = {
+      general: 'General Inquiry',
+      music:   'Music / Booking',
+      synth:   'Synth Commission',
+      design:  'Design Collaboration',
+      food:    'Culinary / Event',
+    };
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData);
-      console.log('Form submitted:', data);
-      alert('Thanks for reaching out! I\'ll get back to you soon.');
-      contactForm.reset();
+      const data = Object.fromEntries(new FormData(contactForm));
+      const name    = (data.name    || '').trim();
+      const email   = (data.email   || '').trim();
+      const subject = SUBJECT_LABELS[data.subject] || 'Inquiry';
+      const message = (data.message || '').trim();
+      const body =
+        'From: ' + name + ' <' + email + '>\n' +
+        'Topic: ' + subject + '\n\n' +
+        message + '\n';
+      const mailto =
+        'mailto:contact@21stcenturyartisan.com' +
+        '?subject=' + encodeURIComponent('[Website] ' + subject) +
+        '&body='    + encodeURIComponent(body);
+      window.location.href = mailto;
     });
   }
 });
