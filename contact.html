@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — 21st Century Artisan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo"><img src="images/logo.jpg" alt="21st Century Artisan"></a>
+      <ul class="navbar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+
+        <li><a href="synths.html">Synths</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="food.html">Food</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="navbar__toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>Get in Touch</h1>
+        <p>For bookings, collaborations, commissions, or just to say hello.</p>
+      </div>
+
+      <div class="contact-section">
+        <div class="contact-info">
+          <h2>Let's Connect</h2>
+          <p>
+            Whether you're interested in booking a performance, commissioning a synth,
+            collaborating on a design project, or planning a culinary event — I'd love
+            to hear from you.
+          </p>
+
+          <div class="contact-info__item">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:contact@21stcenturyartisan.com">contact@21stcenturyartisan.com</a>
+          </div>
+        </div>
+
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="general">General Inquiry</option>
+              <option value="music">Music / Booking</option>
+              <option value="synth">Synth Commission</option>
+              <option value="design">Design Collaboration</option>
+              <option value="food">Culinary / Event</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Tell me about your project or idea..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--filled">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="footer__copy">&copy; 2026 21st Century Artisan. All rights reserved.</span>
+      <ul class="footer__socials">
+        <li><a href="#" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram" class="footer__social-icon"></a></li>
+        <li><a href="#" aria-label="YouTube"><img src="images/youtube.svg" alt="YouTube" class="footer__social-icon"></a></li>
+        <li><a href="#" aria-label="Spotify"><img src="images/spotify.svg" alt="Spotify" class="footer__social-icon"></a></li>
+        <li><a href="#" aria-label="SoundCloud"><img src="images/soundcloud.svg" alt="SoundCloud" class="footer__social-icon"></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
