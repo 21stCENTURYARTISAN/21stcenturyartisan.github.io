@@ -111,7 +111,10 @@ h2, h3 {
   margin: 0 auto 28px;
   max-width: 440px;
   width: min(78vw, 440px);
-  filter: drop-shadow(0 0 40px rgba(99,215,212,0.22));
+  /* No drop-shadow: gur_logo.png has noisy near-transparent edge pixels
+     from make_gur_logo.ps1's flood-fill extraction, and drop-shadow
+     traces them into a visible rectangular halo on dark backgrounds.
+     The ambient body radial-gradient already gives the section a glow. */
 }
 .hero-tagline {
   font-family: 'Bebas Neue', sans-serif;
