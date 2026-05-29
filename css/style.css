@@ -160,6 +160,66 @@ h2, h3 {
 }
 .cta-secondary:hover { color: var(--accent); }
 
+/* ── Hero pricing block ─────────────────────────────────
+   Launch price is the headline number; standard price + update terms sit
+   under it as fine print. Matches the JUCE NEON accent + Bebas Neue
+   typography used everywhere else on the page. No buy button yet — the
+   AVAILABLE SOON badge + notify link in .hero-cta below carries that. */
+.hero-pricing {
+  margin: 0 auto 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.launch-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 14px 28px 12px;
+  border: 1px solid var(--accent-dim);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(99,215,212,0.06) 0%, rgba(99,215,212,0.02) 100%);
+  box-shadow: 0 0 0 1px rgba(99,215,212,0.08), 0 6px 24px -8px rgba(99,215,212,0.18);
+}
+.lp-label {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.22em;
+  font-size: 13px;
+  color: var(--accent);
+  align-self: center;
+  border-right: 1px solid var(--accent-dim);
+  padding-right: 12px;
+}
+.lp-amount {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+.lp-currency {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+.price-fine {
+  margin: 0;
+  max-width: 480px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.price-fine .strike {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: rgba(164,173,180,0.6);
+  margin: 0 2px;
+}
+
 /* ── Section heads (shared) ─────────────────────────────── */
 .section-head {
   max-width: 740px;
@@ -532,6 +592,14 @@ h2, h3 {
   .hero-logo     { max-width: 280px; width: min(82vw, 280px); margin-bottom: 18px; }
   .hero-tagline  { font-size: 14px; margin-bottom: 16px; }
   .hero-lede     { font-size: 15px; margin-bottom: 20px; line-height: 1.55; }
+
+  /* Pricing block fits inside narrow phone viewports without horizontal scroll. */
+  .hero-pricing  { margin-bottom: 22px; gap: 10px; }
+  .launch-price  { padding: 11px 20px 9px; gap: 8px; border-radius: 11px; }
+  .lp-label      { font-size: 11px; padding-right: 9px; }
+  .lp-amount     { font-size: 34px; }
+  .lp-currency   { font-size: 12px; }
+  .price-fine    { font-size: 12.5px; max-width: 92vw; }
 
   .section-head     { margin-bottom: 22px; }
   .section-head h2  { font-size: 19px; }
