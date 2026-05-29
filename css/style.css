@@ -4,12 +4,15 @@
    ============================================================================ */
 
 :root {
-  --bg:          #0b0f15;
-  --panel:       #141c26;
-  --panel-soft:  #111824;
-  --line:        #1f2a38;
-  --text:        #e6ecf2;
-  --muted:       #8693a3;
+  /* Matches the synth's JUCE NEON palette exactly so the iframe blends
+     seamlessly into the page (#08090a body, #14181b panels). Logo no
+     longer reads as a stickered card sitting on a different dark. */
+  --bg:          #08090a;
+  --panel:       #14181b;
+  --panel-soft:  #111416;
+  --line:        #30383e;
+  --text:        #e7ecef;
+  --muted:       #a4adb4;
   --accent:      #63d7d4;
   --accent-dim:  #63d7d433;
   --warn:        #ff6a78;
@@ -64,7 +67,9 @@ h2, h3 {
   width: 44px;
   height: 44px;
   object-fit: contain;
-  filter: drop-shadow(0 0 18px rgba(99,215,212,0.18));
+  /* No drop-shadow: the 21stCA logo PNG has a non-transparent border that
+     drop-shadow traces into a visible rectangular halo, making the mark feel
+     pasted on. Letting it sit clean reads as part of the page. */
 }
 .brand-name {
   font-family: 'Bebas Neue', sans-serif;
@@ -296,16 +301,19 @@ h2, h3 {
 
 /* ── TRY IT (browser demo iframe) ───────────────────────── */
 .try-section { padding: 60px var(--gutter) 70px; }
+/* Iframe gets MUCH wider than the rest of the page (up to 1400px or 94vw)
+   because the synth UI is wide by design. Matching the synth's body bg
+   (#08090a) lets the iframe recede into the page instead of reading as a
+   pasted-on card. No border, no panel-soft fill, no shadow. */
 .iframe-wrap {
-  max-width: var(--maxw);
+  max-width: min(94vw, 1400px);
   margin: 0 auto;
-  background: var(--panel-soft);
-  border: 1px solid var(--line);
+  background: #08090a;
+  border: 0;
   border-radius: 14px;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   position: relative;
-  box-shadow: 0 30px 80px -40px rgba(99,215,212,0.18);
 }
 .iframe-wrap iframe {
   position: absolute;
@@ -315,25 +323,25 @@ h2, h3 {
   border: 0;
   display: block;
 }
-/* Fullscreen button — lives BELOW the iframe, not as an overlay.
-   Audio keeps playing across the transition because the iframe carries
-   allow="autoplay; fullscreen" and the AudioContext was already started by
-   the user pressing PLAY inside the synth. */
+/* Fullscreen button — sits directly under the iframe, right-aligned, with
+   the same max-width so it visually belongs to the player. Right-aligned so
+   it never overlaps the synth's controls (which cluster top-left/center). */
 .try-actions {
-  max-width: var(--maxw);
-  margin: 16px auto 0;
+  max-width: min(94vw, 1400px);
+  margin: 12px auto 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 0 4px;
 }
 .fs-btn {
-  background: transparent;
+  background: rgba(99, 215, 212, 0.06);
   border: 1px solid var(--accent-dim);
   color: var(--accent);
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.18em;
-  font-size: 14px;
-  padding: 11px 22px 10px;
-  border-radius: 8px;
+  font-size: 13px;
+  padding: 9px 18px 8px;
+  border-radius: 6px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -342,7 +350,7 @@ h2, h3 {
 }
 .fs-btn:hover,
 .fs-btn:focus-visible {
-  background: rgba(99, 215, 212, 0.12);
+  background: rgba(99, 215, 212, 0.14);
   border-color: var(--accent);
   color: var(--text);
   outline: none;
@@ -529,12 +537,11 @@ h2, h3 {
   .section-head h2  { font-size: 19px; }
   .section-head p   { font-size: 14px; }
 
-  /* Phones: the synth's internal design is locked to 1280x720 (16:9) by
-     initScale's minimum, then transform-scaled. So we keep the iframe at
-     16:9 to avoid stretching, and use a min-height floor so the iframe is
-     never so short the UI becomes a sliver. */
-  .iframe-wrap { aspect-ratio: 16 / 9; border-radius: 10px; min-height: 240px; }
-  .try-actions { margin-top: 14px; }
+  /* Phones: iframe stays 16:9 (matches synth's locked 1280x720). Min-height
+     floor so it can't collapse to a sliver. Fullscreen button stays right-
+     aligned under the iframe — never overlaps the synth UI. */
+  .iframe-wrap { aspect-ratio: 16 / 9; border-radius: 10px; min-height: 240px; max-width: 96vw; }
+  .try-actions { max-width: 96vw; margin-top: 10px; justify-content: center; }
   .fs-btn      { font-size: 13px; padding: 12px 24px 11px; }   /* easier tap target */
   .try-note    { font-size: 12px; margin-top: 12px; padding: 0 8px; }
 
