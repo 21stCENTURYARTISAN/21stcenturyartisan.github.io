@@ -45,7 +45,7 @@
     <div class="hero-tagline">DJ LIVE SEQUENCER</div>
     <p class="hero-lede">
       A standalone instrument for live performance — drum machine, polyphonic synthesizer,
-      dual decks, live throw FX, and a sample-accurate sequencer in one app.
+      four decks, live throw FX, and a sample-accurate sequencer in one app.
     </p>
     <div class="hero-cta">
       <span class="badge">AVAILABLE SOON</span>
@@ -58,19 +58,31 @@
   <section id="shots" class="shots-section">
     <div class="section-head">
       <h2>THE NATIVE APP</h2>
-      <p>A teaser. Standalone Windows / macOS, low-latency, ASIO + MIDI.</p>
+      <p>A glance. Standalone Windows / macOS, low-latency, ASIO + MIDI.</p>
     </div>
     <div class="shots-grid">
-      <figure class="shot">
+      <figure class="shot" data-lightbox="0" tabindex="0" role="button" aria-label="Open larger view of LIVE mode screenshot">
         <img src="images/gur-live.png" alt="GUR live mode — mixer and 8-channel sequencer" loading="lazy">
         <figcaption>LIVE MODE — mixer + 8-channel sequencer</figcaption>
       </figure>
-      <figure class="shot">
-        <img src="images/gur-dj.png" alt="GUR DJ mode — dual decks, track library, mixer" loading="lazy">
-        <figcaption>DJ MODE — dual decks + track library</figcaption>
+      <figure class="shot" data-lightbox="1" tabindex="0" role="button" aria-label="Open larger view of DJ mode screenshot">
+        <img src="images/gur-dj.png" alt="GUR DJ mode — four decks, track library, mixer" loading="lazy">
+        <figcaption>DJ MODE — 4 decks (2 sequencer + 2 track) + track library</figcaption>
       </figure>
     </div>
   </section>
+
+  <!-- LIGHTBOX — fullscreen view of the screenshots. Click outside / X / Esc to close,
+       arrows or click-image to flip between LIVE and DJ shots. -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden>
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-nav lb-prev" aria-label="Previous screenshot">‹</button>
+    <button class="lb-nav lb-next" aria-label="Next screenshot">›</button>
+    <figure class="lb-stage">
+      <img id="lbImg" src="" alt="">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+  </div>
 
   <!-- TRY IT LIVE -->
   <section id="try" class="try-section">
@@ -96,8 +108,8 @@
         <p>Kick, snare, hats, bass, chord, arp, pad, lead. Each with independent loop length on a 32-step grid. Sample-accurate timing.</p>
       </div>
       <div class="card">
-        <h3>DUAL DJ DECKS</h3>
-        <p>Two sequencer decks plus two track decks for audio files. Key-locked time-stretch, beat-loops, sync, slip — the CDJ workflow, in software.</p>
+        <h3>FOUR-DECK DJ MODE</h3>
+        <p>Two sequencer decks (A/B) plus two audio-file track decks (A/B). Key-locked time-stretch, beat-loops, sync, slip — the CDJ workflow, in software.</p>
       </div>
       <div class="card">
         <h3>STEM SEPARATION</h3>
