@@ -92,22 +92,24 @@
     <div class="iframe-wrap">
       <!-- allow="autoplay; fullscreen" keeps the Web Audio context running when the
            iframe enters fullscreen. The synth's AudioContext is started by the user
-           pressing LIVE inside the iframe, which counts as the user gesture. -->
+           pressing PLAY inside the iframe, which counts as the user gesture. -->
       <iframe id="synthFrame"
               src="https://21stcenturyartisan.github.io/DJLS-public/"
               title="GUR-V1 — browser demo"
               allow="autoplay; fullscreen; encrypted-media; clipboard-read; clipboard-write"
               allowfullscreen
               loading="lazy"></iframe>
-      <button id="synthFsBtn" class="iframe-fs" type="button" aria-label="Open synth in fullscreen">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    </div>
+    <div class="try-actions">
+      <button id="synthFsBtn" class="fs-btn" type="button" aria-label="Open synth in fullscreen">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M4 9V4h5"/><path d="M20 9V4h-5"/>
           <path d="M4 15v5h5"/><path d="M20 15v5h-5"/>
         </svg>
-        FULLSCREEN
+        OPEN FULLSCREEN
       </button>
     </div>
-    <p class="try-note">Press LIVE inside the frame to start audio, then tap <strong>FULLSCREEN</strong> for the full UI. Best in Chrome / Edge / Firefox on desktop. The full native app (low-latency, ASIO, MIDI) launches when it's ready.</p>
+    <p class="try-note">Press PLAY inside the frame to start audio. Best in Chrome / Edge / Firefox on desktop. The full native app (low-latency, ASIO, MIDI) launches when it's ready.</p>
   </section>
 
   <!-- FEATURE GRID -->

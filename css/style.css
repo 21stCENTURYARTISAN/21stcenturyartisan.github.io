@@ -315,35 +315,39 @@ h2, h3 {
   border: 0;
   display: block;
 }
-/* Fullscreen button — floats over the iframe top-right.
-   Audio keeps playing because the AudioContext was started by the user
-   clicking LIVE *inside* the iframe (and the iframe has allow="autoplay"). */
-.iframe-fs {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 5;
-  background: rgba(11, 15, 21, 0.75);
+/* Fullscreen button — lives BELOW the iframe, not as an overlay.
+   Audio keeps playing across the transition because the iframe carries
+   allow="autoplay; fullscreen" and the AudioContext was already started by
+   the user pressing PLAY inside the synth. */
+.try-actions {
+  max-width: var(--maxw);
+  margin: 16px auto 0;
+  display: flex;
+  justify-content: center;
+}
+.fs-btn {
+  background: transparent;
   border: 1px solid var(--accent-dim);
   color: var(--accent);
   font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 0.14em;
-  font-size: 12px;
-  padding: 7px 12px 6px;
-  border-radius: 6px;
+  letter-spacing: 0.18em;
+  font-size: 14px;
+  padding: 11px 22px 10px;
+  border-radius: 8px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  backdrop-filter: blur(6px);
+  gap: 8px;
   transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
-.iframe-fs:hover {
-  background: rgba(99, 215, 212, 0.18);
+.fs-btn:hover,
+.fs-btn:focus-visible {
+  background: rgba(99, 215, 212, 0.12);
   border-color: var(--accent);
   color: var(--text);
+  outline: none;
 }
-.iframe-fs svg { display: block; }
+.fs-btn svg { display: block; }
 .try-note {
   max-width: 600px;
   margin: 18px auto 0;
@@ -525,12 +529,14 @@ h2, h3 {
   .section-head h2  { font-size: 19px; }
   .section-head p   { font-size: 14px; }
 
-  /* Phones: 16/10 makes the synth UI unusably small in portrait.
-     Switch to ~4/3 so the iframe is taller, and surface the fullscreen
-     CTA more prominently in the note below. */
-  .iframe-wrap { aspect-ratio: 4 / 3; border-radius: 10px; }
-  .iframe-fs   { top: 8px; right: 8px; font-size: 11px; padding: 6px 10px 5px; }
-  .try-note    { font-size: 12px; margin-top: 14px; padding: 0 8px; }
+  /* Phones: the synth's internal design is locked to 1280x720 (16:9) by
+     initScale's minimum, then transform-scaled. So we keep the iframe at
+     16:9 to avoid stretching, and use a min-height floor so the iframe is
+     never so short the UI becomes a sliver. */
+  .iframe-wrap { aspect-ratio: 16 / 9; border-radius: 10px; min-height: 240px; }
+  .try-actions { margin-top: 14px; }
+  .fs-btn      { font-size: 13px; padding: 12px 24px 11px; }   /* easier tap target */
+  .try-note    { font-size: 12px; margin-top: 12px; padding: 0 8px; }
 
   .card        { padding: 18px 18px; }
   .card h3     { font-size: 15px; }
