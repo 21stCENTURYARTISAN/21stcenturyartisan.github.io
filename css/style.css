@@ -170,6 +170,46 @@ h2, h3 {
   margin: 0;
 }
 
+/* ── SCREENSHOTS — native-app teaser ────────────────────── */
+.shots-section { padding: 50px var(--gutter) 60px; }
+.shots-grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 18px;
+}
+.shot {
+  margin: 0;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 24px 60px -36px rgba(99,215,212,0.18);
+}
+.shot:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+}
+.shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+}
+.shot figcaption {
+  padding: 10px 14px 12px;
+  color: var(--muted);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 720px) {
+  .shots-grid { grid-template-columns: 1fr; }
+}
+
 /* ── TRY IT (browser demo iframe) ───────────────────────── */
 .try-section { padding: 60px var(--gutter) 70px; }
 .iframe-wrap {
