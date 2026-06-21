@@ -160,6 +160,95 @@ h2, h3 {
 }
 .cta-secondary:hover { color: var(--accent); }
 
+/* ── COUNTDOWN (launch clock) ───────────────────────────── */
+.countdown-section { padding: 8px var(--gutter) 36px; }
+.countdown-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 30px clamp(20px, 4vw, 44px) 34px;
+  text-align: center;
+  background:
+    radial-gradient(120% 90% at 50% -20%, rgba(99,215,212,0.07) 0%, transparent 62%),
+    linear-gradient(180deg, rgba(20,24,27,0.85) 0%, rgba(14,17,20,0.92) 100%);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.04) inset,
+    0 -1px 0 rgba(0,0,0,0.4) inset,
+    0 24px 60px -42px rgba(0,0,0,0.7);
+  position: relative;
+  overflow: hidden;
+}
+.countdown-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 22%; right: 22%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent) 50%, transparent);
+  opacity: 0.5;
+}
+.cd-eyebrow {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.34em;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.cd-date {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.18em;
+  font-size: clamp(20px, 3vw, 28px);
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+.cd-clock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(10px, 2.4vw, 22px);
+}
+.cd-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: clamp(48px, 12vw, 84px);
+}
+.cd-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(38px, 7vw, 64px);
+  line-height: 0.95;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 22px rgba(99,215,212,0.18);
+}
+.cd-lbl {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.2em;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.cd-sep {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(30px, 6vw, 52px);
+  line-height: 1;
+  color: var(--line);
+  align-self: flex-start;
+  margin-top: clamp(2px, 0.6vw, 6px);
+}
+.cd-done {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.18em;
+  font-size: clamp(20px, 3.4vw, 30px);
+  color: var(--accent);
+  text-shadow: 0 0 22px rgba(99,215,212,0.3);
+}
+@media (max-width: 560px) {
+  .countdown-card { padding: 24px 16px 26px; border-radius: 14px; }
+  .cd-clock { gap: 6px; }
+  .cd-sep   { display: none; }       /* drop separators when space is tight */
+  .cd-unit  { min-width: 0; flex: 1; }
+}
+
 /* ═══════════════════════════════════════════════════════
    REUSABLE BUTTON SYSTEM (.gur-btn)
    Single source of truth for every CTA on the page. Modifiers compose:

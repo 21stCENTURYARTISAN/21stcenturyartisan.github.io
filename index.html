@@ -62,6 +62,25 @@
     </div>
   </section>
 
+  <!-- COUNTDOWN — launch clock to 1 Aug 2026. JS in main.js fills the digits
+       and ticks once per second; if the date passes it flips to a LAUNCHED state. -->
+  <section class="countdown-section" aria-label="Launch countdown">
+    <div class="countdown-card" id="countdown" data-launch="2026-08-01T00:00:00">
+      <div class="cd-eyebrow">LAUNCHING</div>
+      <div class="cd-date">AUGUST 1, 2026</div>
+      <div class="cd-clock" id="cdClock" role="timer" aria-live="off">
+        <div class="cd-unit"><span class="cd-num" id="cdDays">--</span><span class="cd-lbl">DAYS</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cdHours">--</span><span class="cd-lbl">HRS</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cdMins">--</span><span class="cd-lbl">MIN</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cdSecs">--</span><span class="cd-lbl">SEC</span></div>
+      </div>
+      <div class="cd-done" id="cdDone" hidden>IT'S LIVE — GUR IS OUT NOW</div>
+    </div>
+  </section>
+
   <!-- SCREENSHOTS — teaser of the native JUCE app -->
   <section id="shots" class="shots-section">
     <div class="section-head">
@@ -134,7 +153,23 @@
       </div>
       <div class="card">
         <h3>FOUR-DECK DJ MODE</h3>
-        <p>Two sequencer decks (A/B) plus two audio-file track decks (A/B). Key-locked time-stretch, beat-loops, sync, slip — the CDJ workflow, in software.</p>
+        <p>Two sequencer decks (A/B) plus two audio-file track decks (A/B). The full CDJ workflow, in software — no DAW, no host.</p>
+      </div>
+      <div class="card">
+        <h3>DJ LIBRARY &amp; IMPORT</h3>
+        <p>A built-in collection with playlists. Import straight from Traktor, Rekordbox and VirtualDJ — BPM, beatgrids, keys and hot cues come across — or read a live Rekordbox database directly.</p>
+      </div>
+      <div class="card">
+        <h3>HARMONIC KEY MIXING</h3>
+        <p>Automatic musical / Camelot key per deck, with real transposition. Mix in key across sequencer and track decks, and shift any deck to match.</p>
+      </div>
+      <div class="card">
+        <h3>CDJ-GRADE LOOPS &amp; CUES</h3>
+        <p>Beat loops, manual loops, slip mode and four hot cues per deck — all phase-locked to the sequencer with continuous beat-sync.</p>
+      </div>
+      <div class="card">
+        <h3>KEY-LOCK TIME-STRETCH</h3>
+        <p>High-quality stretching keeps pitch locked while you ride the tempo — or unlock it for full vinyl-style pitch bends.</p>
       </div>
       <div class="card">
         <h3>STEM SEPARATION</h3>
@@ -145,8 +180,16 @@
         <p>Hold-to-engage pad rack — flanger, crusher, reverb-plus, delay-plus, gate, loop, high-pass sweep, glitch. Designed for live drops.</p>
       </div>
       <div class="card">
+        <h3>MASTER FX RACK</h3>
+        <p>A lush FDN reverb, tempo-synced delay and a musicality layer on the master bus — with a live performance panel to ride them.</p>
+      </div>
+      <div class="card">
+        <h3>STUDIO-QUALITY EXPORT</h3>
+        <p>Render your set to WAV, AIFF, FLAC, MP3 or AAC — at the right tempo and key, with full metadata. A faithful recording of exactly what you heard.</p>
+      </div>
+      <div class="card">
         <h3>MIDI CONTROLLER MAPPING</h3>
-        <p>Generic, table-driven MIDI Learn. Works out of the box with the Traktor Kontrol S2 MK2; map any controller to any function.</p>
+        <p>Table-driven MIDI Learn with per-device profiles. Works out of the box with the Traktor Kontrol S2; map any controller — Traktor S4, Pioneer DDJ-FLX and more.</p>
       </div>
       <div class="card">
         <h3>CUE OUTPUT</h3>
@@ -209,7 +252,7 @@
           <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M3 8 L6.5 11.5 L13 5"/>
           </svg>
-          Windows 10 / 11
+          Windows 10 / 11 + macOS
         </li>
         <li>
           <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -228,7 +271,7 @@
         </a>
       </div>
 
-      <p class="pc-status"><span class="pc-status-dot" aria-hidden="true"></span>Available soon · v1.0 in final QA</p>
+      <p class="pc-status"><span class="pc-status-dot" aria-hidden="true"></span>Launching August 1, 2026 · Windows &amp; macOS</p>
     </div>
   </section>
 
@@ -239,7 +282,7 @@
     </div>
     <div class="platforms-row">
       <span class="platform live">WINDOWS 10 / 11</span>
-      <span class="platform soon">MACOS · COMING SOON</span>
+      <span class="platform live">MACOS</span>
     </div>
   </section>
 

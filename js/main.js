@@ -4,7 +4,52 @@ document.addEventListener('DOMContentLoaded', () => {
   // Smooth-scroll anchor behaviour is handled by `html { scroll-behavior: smooth }`.
   initLightbox();
   initSynthFullscreen();
+  initCountdown();
 });
+
+/* ─── Launch countdown ───────────────────────────────────────
+   Ticks the DAYS:HRS:MIN:SEC digits once per second toward the
+   data-launch ISO date on #countdown. When the target passes, the
+   clock is swapped for the "it's live" message. Local-time based —
+   the launch date is read as midnight in the visitor's own zone,
+   which is what a "launching August 1" promise reads as to them. */
+function initCountdown() {
+  const root = document.getElementById('countdown');
+  if (!root) return;
+
+  const target = new Date(root.getAttribute('data-launch')).getTime();
+  if (Number.isNaN(target)) return;
+
+  const clock = document.getElementById('cdClock');
+  const done  = document.getElementById('cdDone');
+  const elDays = document.getElementById('cdDays');
+  const elHrs  = document.getElementById('cdHours');
+  const elMin  = document.getElementById('cdMins');
+  const elSec  = document.getElementById('cdSecs');
+
+  const pad = n => String(n).padStart(2, '0');
+
+  let timer = null;
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      // Launch reached — reveal the live message, retire the ticking clock.
+      if (clock) clock.hidden = true;
+      if (done)  done.hidden = false;
+      root.classList.add('is-live');
+      if (timer) clearInterval(timer);
+      return;
+    }
+    const secs = Math.floor(diff / 1000);
+    elDays.textContent = String(Math.floor(secs / 86400));
+    elHrs.textContent  = pad(Math.floor((secs % 86400) / 3600));
+    elMin.textContent  = pad(Math.floor((secs % 3600) / 60));
+    elSec.textContent  = pad(secs % 60);
+  }
+
+  tick();
+  timer = setInterval(tick, 1000);
+}
 
 /* ─── Browser-synth iframe fullscreen ────────────────────────
    The iframe carries allow="autoplay; fullscreen", so the AudioContext
