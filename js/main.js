@@ -5,7 +5,111 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initSynthFullscreen();
   initCountdown();
+  initMailChooser();
 });
+
+/* ─── Mail chooser ───────────────────────────────────────────
+   The OS "how do you want to open this?" picker can't be made to route
+   Gmail to a compose window from a web page, and a bare mailto: does
+   nothing when no mail handler is registered. So we own the picker: any
+   [data-mail-email] link opens this in-page dialog, and each option routes
+   to a guaranteed-working target — Gmail / Outlook web compose (pre-filled),
+   the default mail app via mailto:, or copy-to-clipboard. The link's href
+   stays a Gmail compose URL as the no-JS fallback. */
+function initMailChooser() {
+  const modal = document.getElementById('mailChooser');
+  const triggers = document.querySelectorAll('[data-mail-email]');
+  if (!modal || !triggers.length) return;
+
+  const toEl      = document.getElementById('mcTo');
+  const optGmail  = modal.querySelector('[data-mc="gmail"]');
+  const optOutlook= modal.querySelector('[data-mc="outlook"]');
+  const optDefault= modal.querySelector('[data-mc="default"]');
+  const optCopy   = modal.querySelector('[data-mc="copy"]');
+  const closeBtn  = modal.querySelector('.mc-close');
+
+  let lastTrigger = null;
+  let copyTimer = null;
+  const enc = s => encodeURIComponent(s || '');
+
+  function open(email, subject, body, trigger) {
+    lastTrigger = trigger || null;
+    toEl.textContent = email;
+
+    const to = encodeURIComponent(email), su = enc(subject), bd = enc(body);
+    optGmail.href   = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}&body=${bd}`;
+    optOutlook.href = `https://outlook.live.com/mail/0/deeplink/compose?to=${to}&subject=${su}&body=${bd}`;
+
+    let mt = `mailto:${email}`;
+    const q = [];
+    if (subject) q.push('subject=' + su);
+    if (body)    q.push('body=' + bd);
+    if (q.length) mt += '?' + q.join('&');
+    optDefault.href = mt;
+
+    optCopy.dataset.email = email;
+    optCopy.textContent = 'Copy email address';
+    optCopy.classList.remove('is-copied');
+
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus({ preventScroll: true });
+  }
+
+  function close() {
+    if (modal.hidden) return;
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    lastTrigger?.focus({ preventScroll: true });
+  }
+
+  triggers.forEach(t => {
+    t.addEventListener('click', e => {
+      e.preventDefault();
+      open(t.getAttribute('data-mail-email'),
+           t.getAttribute('data-mail-subject'),
+           t.getAttribute('data-mail-body'),
+           t);
+    });
+  });
+
+  // Gmail/Outlook open a new tab, default app navigates via mailto: — close after.
+  [optGmail, optOutlook, optDefault].forEach(o =>
+    o.addEventListener('click', () => setTimeout(close, 0)));
+
+  optCopy.addEventListener('click', async () => {
+    const email = optCopy.dataset.email;
+    let ok = true;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(email);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = email;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+    } catch (err) { ok = false; }
+    optCopy.textContent = ok ? 'Copied!' : email;
+    optCopy.classList.toggle('is-copied', ok);
+    if (copyTimer) clearTimeout(copyTimer);
+    copyTimer = setTimeout(() => {
+      optCopy.textContent = 'Copy email address';
+      optCopy.classList.remove('is-copied');
+    }, 1600);
+  });
+
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => {
+    if (!modal.hidden && e.key === 'Escape') close();
+  });
+}
 
 /* ─── Launch countdown ───────────────────────────────────────
    Ticks the DAYS:HRS:MIN:SEC digits once per second toward the

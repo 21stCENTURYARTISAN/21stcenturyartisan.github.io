@@ -127,6 +127,23 @@
     </figure>
   </div>
 
+  <!-- MAIL CHOOSER — in-page "which email app?" picker. We control it, so picking
+       Gmail/Outlook opens a pre-filled compose and "Default mail app" fires mailto:.
+       Populated + opened by initMailChooser() from any [data-mail-email] link. -->
+  <div class="mailchooser" id="mailChooser" role="dialog" aria-modal="true" aria-label="Choose your email app" hidden>
+    <div class="mc-card">
+      <button class="mc-close" aria-label="Close">×</button>
+      <h3 class="mc-title">Open email with…</h3>
+      <p class="mc-sub" id="mcTo"></p>
+      <div class="mc-options">
+        <a class="mc-opt" data-mc="gmail" target="_blank" rel="noopener">Gmail</a>
+        <a class="mc-opt" data-mc="outlook" target="_blank" rel="noopener">Outlook</a>
+        <a class="mc-opt" data-mc="default">Default mail app</a>
+        <button class="mc-opt mc-copy" type="button" data-mc="copy">Copy email address</button>
+      </div>
+    </div>
+  </div>
+
   <!-- TRY IT LIVE -->
   <section id="try" class="try-section">
     <div class="section-head">
@@ -275,7 +292,12 @@
       </ul>
 
       <div class="pc-cta-row">
-        <a class="gur-btn gur-btn--primary gur-btn--lg" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@21stcenturyartisan.com&amp;su=GUR%20%E2%80%94%20notify%20me%20at%20launch&amp;body=Please%20let%20me%20know%20when%20GUR%20is%20available%20to%20purchase." target="_blank" rel="noopener">
+        <!-- JS intercepts the click and shows the in-page mail chooser (initMailChooser).
+             The Gmail href stays as the no-JS fallback. -->
+        <a class="gur-btn gur-btn--primary gur-btn--lg" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@21stcenturyartisan.com&amp;su=GUR%20%E2%80%94%20notify%20me%20at%20launch&amp;body=Please%20let%20me%20know%20when%20GUR%20is%20available%20to%20purchase." target="_blank" rel="noopener"
+           data-mail-email="contact@21stcenturyartisan.com"
+           data-mail-subject="GUR — notify me at launch"
+           data-mail-body="Please let me know when GUR is available to purchase.">
           GET LAUNCH NOTIFICATION
         </a>
         <a class="gur-btn gur-btn--ghost gur-btn--lg" href="#try">
@@ -309,7 +331,8 @@
       <p class="about-credit">
         Built by <strong>Nadav Hecht Drayson</strong>
       </p>
-      <a class="contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@21stcenturyartisan.com" target="_blank" rel="noopener">
+      <a class="contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@21stcenturyartisan.com" target="_blank" rel="noopener"
+         data-mail-email="contact@21stcenturyartisan.com">
         contact@21stcenturyartisan.com
       </a>
     </div>
@@ -335,6 +358,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260629"></script>
+<script src="js/main.js?v=20260629b"></script>
 </body>
 </html>
