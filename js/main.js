@@ -116,7 +116,7 @@ function initMailChooser() {
    data-launch ISO date on #countdown. When the target passes, the
    clock is swapped for the "it's live" message. Local-time based —
    the launch date is read as midnight in the visitor's own zone,
-   which is what a "launching August 1" promise reads as to them. */
+   which is what a "launching September 1" promise reads as to them. */
 function initCountdown() {
   const root = document.getElementById('countdown');
   if (!root) return;
