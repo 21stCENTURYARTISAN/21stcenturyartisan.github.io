@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260705">
+  <link rel="stylesheet" href="css/style.css?v=20260705b">
 </head>
 <body>
 
@@ -349,14 +349,21 @@
         Get GUR in your hands before launch, run it on your own rig, and help
         shape the release. Limited spots — early testers lock in early access.
       </p>
-      <div class="beta-cta">
-        <a class="gur-btn gur-btn--primary gur-btn--lg"
-           href="https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/61d40824-72fb-4e00-8f80-0bd035252667"
-           target="_blank" rel="noopener">
-          APPLY FOR BETA ACCESS
-        </a>
-      </div>
-      <p class="beta-note">Secure checkout via LemonSqueezy · Windows &amp; macOS</p>
+      <!-- Static site (no backend): FormSubmit relays the applicant's email to
+           contact@21stcenturyartisan.com, then _next sends them straight on to
+           the LemonSqueezy checkout. -->
+      <form class="beta-form" action="https://formsubmit.co/contact@21stcenturyartisan.com" method="POST">
+        <input type="hidden" name="_subject" value="New GUR beta-tester application">
+        <input type="hidden" name="_next" value="https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/61d40824-72fb-4e00-8f80-0bd035252667">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <!-- Honeypot — bots fill it, humans never see it. -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="beta-honey">
+        <input class="beta-input" type="email" name="email" required
+               placeholder="you@email.com" aria-label="Your email address" autocomplete="email">
+        <button class="gur-btn gur-btn--primary gur-btn--lg" type="submit">APPLY FOR BETA ACCESS</button>
+      </form>
+      <p class="beta-note">We'll email you beta details, then take you to secure LemonSqueezy checkout · Windows &amp; macOS</p>
     </div>
   </section>
 

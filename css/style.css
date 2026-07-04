@@ -1032,6 +1032,39 @@ h2, h3 {
   flex-wrap: wrap;
   gap: 14px;
 }
+.beta-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.beta-input {
+  flex: 1 1 240px;
+  min-width: 0;
+  height: 56px;
+  padding: 0 18px;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 15px;
+}
+.beta-input::placeholder { color: var(--muted); }
+.beta-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+/* Honeypot — kept out of view and off the accessibility tree. */
+.beta-honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+@media (max-width: 520px) {
+  .beta-form { flex-direction: column; }
+  .beta-input,
+  .beta-form .gur-btn { width: 100%; }
+}
 .beta-note {
   margin: 24px 0 0;
   font-size: 12.5px;
