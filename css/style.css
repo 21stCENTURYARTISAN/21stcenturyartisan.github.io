@@ -1065,6 +1065,74 @@ h2, h3 {
   .beta-input,
   .beta-form .gur-btn { width: 100%; }
 }
+/* ============================================================
+   INSTRUMENT-COUNT BANNER (features section) — 3 / 4 / 4 tiles.
+   ============================================================ */
+.synth-banner {
+  max-width: 920px;
+  margin: 0 auto 46px;
+  padding: 30px clamp(20px, 4vw, 40px);
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(99,215,212,0.07) 0%, transparent 65%),
+    linear-gradient(180deg, rgba(20,24,27,0.90) 0%, rgba(14,17,20,0.95) 100%);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.04) inset,
+    0 20px 60px -40px rgba(0,0,0,0.7);
+  position: relative;
+  overflow: hidden;
+}
+.synth-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+  opacity: 0.55;
+}
+.sb-lead {
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.26em;
+  font-size: 13px;
+  color: var(--accent);
+  margin: 0 0 24px;
+}
+.sb-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.sb-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 4px 12px;
+}
+.sb-tile + .sb-tile { border-left: 1px solid var(--line); }
+.sb-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(46px, 6vw, 62px);
+  line-height: 0.85;
+  color: var(--text);
+}
+.sb-label {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.13em;
+  font-size: 15px;
+  color: var(--accent);
+}
+@media (max-width: 620px) {
+  .sb-tiles { grid-template-columns: 1fr; gap: 24px; }
+  .sb-tile + .sb-tile {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+  }
+}
+
 /* GUR is desktop-only (Windows / macOS). Hide the beta signup on true touch
    devices — phones and tablets — where the software can't run. Uses
    hover:none + pointer:coarse so laptops (incl. touchscreen ones with a
