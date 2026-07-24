@@ -1133,13 +1133,10 @@ h2, h3 {
   }
 }
 
-/* GUR is desktop-only (Windows / macOS). Hide the beta signup on true touch
-   devices — phones and tablets — where the software can't run. Uses
-   hover:none + pointer:coarse so laptops (incl. touchscreen ones with a
-   trackpad) still show it. */
-@media (hover: none) and (pointer: coarse) {
-  .beta-section { display: none; }
-}
+/* GUR is desktop-only (Windows / macOS), but the beta signup stays visible on
+   phones and tablets: most traffic (Instagram) is mobile, and people happily
+   claim a beta spot on their phone to install on their PC later. The intake
+   form makes the desktop requirement explicit (OS question + note). */
 /* Free-coupon callout — subtle accent-tinted box so it reads as the key
    promise, not fine print. */
 .beta-coupon {
