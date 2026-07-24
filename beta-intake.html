@@ -160,12 +160,13 @@
         <h2>Your setup</h2>
 
         <div class="field">
-          <label>What operating system are you on? <span class="req">*</span></label>
+          <label>What operating system(s) do you use? <span class="req">*</span></label>
+          <div class="hint">Tick all that apply - you can choose both Windows and macOS.</div>
           <div class="opts row">
-            <label class="opt"><input type="radio" name="OS" value="Windows 11" required> Windows 11</label>
-            <label class="opt"><input type="radio" name="OS" value="Windows 10"> Windows 10</label>
-            <label class="opt"><input type="radio" name="OS" value="macOS"> macOS</label>
-            <label class="opt"><input type="radio" name="OS" value="Other"> Other</label>
+            <label class="opt"><input type="checkbox" name="OS" value="Windows 11"> Windows 11</label>
+            <label class="opt"><input type="checkbox" name="OS" value="Windows 10"> Windows 10</label>
+            <label class="opt"><input type="checkbox" name="OS" value="macOS"> macOS</label>
+            <label class="opt"><input type="checkbox" name="OS" value="Other"> Other</label>
           </div>
           <div class="note">GUR runs on <strong>Windows and macOS</strong> - this just helps me send you the right build.</div>
         </div>
@@ -220,5 +221,15 @@
       <div class="foot">GUR - DJ Live Sequencer Workstation - 21st Century Artisan</div>
     </form>
   </div>
+  <script>
+    // Require at least one OS checkbox (HTML can't group-require checkboxes).
+    document.querySelector('form').addEventListener('submit', function (e) {
+      var os = document.querySelectorAll('input[name="OS"]:checked');
+      if (os.length === 0) {
+        e.preventDefault();
+        alert('Please pick at least one operating system.');
+      }
+    });
+  </script>
 </body>
 </html>
