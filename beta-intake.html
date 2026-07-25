@@ -103,7 +103,7 @@
         </div>
         <div class="field">
           <label>Email <span class="req">*</span></label>
-          <div class="hint">Phone and tablet applicants also receive the download link here, ready to open later on a Windows PC.</div>
+          <div class="hint">Used only for beta communication and download follow-up.</div>
           <input type="email" name="email" required placeholder="you@email.com">
         </div>
       </div>
@@ -222,8 +222,9 @@
     </form>
   </div>
   <script>
-    // Label every submission by device. Phone and tablet applicants also receive
-    // the installer link automatically so they can open it later on a Windows PC.
+    // Label every submission by device so mobile/tablet applications stand out
+    // in the owner notification. Do not use FormSubmit's _autoresponse here:
+    // it includes a copy of the applicant's submitted answers.
     (function () {
       var ua = navigator.userAgent || '';
       var isIPadOS = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
@@ -238,20 +239,6 @@
       if (device !== 'Desktop') {
         document.getElementById('formSubject').value =
           'New GUR beta intake - ' + device.toUpperCase();
-
-        var autoResponse = document.createElement('input');
-        autoResponse.type = 'hidden';
-        autoResponse.name = '_autoresponse';
-        autoResponse.value = [
-          'Congratulations - welcome to the GUR beta.',
-          'Thank you for completing the beta application from your ' + device.toLowerCase() + '. Your Windows download is ready:',
-          'https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.2/GUR-1.0.2-Setup.exe',
-          'Open this email on your Windows 10 or 11 PC, download the installer, and run it. If Windows SmartScreen appears, choose More info, then Run anyway.',
-          'Your full-featured 30-day trial begins automatically when you first open GUR. No checkout, coupon, or serial key is required.',
-          'Thank you for taking part and helping shape GUR.',
-          'Warm regards,\nNadav Hecht Drayson\n21st Century Artisan\ncontact@21stcenturyartisan.com'
-        ].join('\n\n');
-        document.querySelector('form').appendChild(autoResponse);
       }
     }());
 
