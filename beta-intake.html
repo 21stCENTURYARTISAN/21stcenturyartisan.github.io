@@ -248,6 +248,28 @@
       if (os.length === 0) {
         e.preventDefault();
         alert('Please pick at least one operating system.');
+        return;
+      }
+
+      // FormSubmit performs its CAPTCHA/acceptance first. If this application
+      // came from a phone or tablet, leave only the recipient details in this
+      // tab's session storage. The thank-you page sends the separate welcome
+      // template after FormSubmit redirects back; no questionnaire answers are
+      // included in the applicant email.
+      var device = document.getElementById('submissionDevice').value;
+      if (device !== 'Desktop') {
+        var fullName = this.elements['Name'].value.trim();
+        var firstName = fullName.split(/\s+/)[0] || 'there';
+        try {
+          sessionStorage.setItem('gurBetaWelcomePending', JSON.stringify({
+            firstName: firstName,
+            email: this.elements['email'].value.trim(),
+            createdAt: Date.now()
+          }));
+        } catch (storageError) {
+          // The form submission and direct website download still work when
+          // private browsing or storage policy blocks sessionStorage.
+        }
       }
     });
   </script>

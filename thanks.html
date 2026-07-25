@@ -68,6 +68,13 @@
   }
   a.btn.secondary:hover{border-color:var(--accent);box-shadow:0 0 18px rgba(99,215,212,.12)}
   .download-note{font-size:12.5px;margin:-10px auto 24px;max-width:400px}
+  .email-status{
+    max-width:420px;margin:0 auto 18px;padding:10px 13px;border-radius:10px;
+    border:1px solid var(--accent-dim);background:rgba(99,215,212,.06);
+    color:var(--muted);font-size:12.5px;
+  }
+  .email-status.success{color:var(--accent)}
+  .email-status.error{border-color:#6d4545;color:#d6a1a1;background:rgba(180,75,75,.06)}
   .foot{color:var(--muted);font-size:12.5px;margin-top:22px}
   .foot a{color:var(--accent);text-decoration:none}
 </style>
@@ -78,6 +85,7 @@
     <div class="check">&#10003;</div>
     <h1>Your trial is ready.</h1>
     <p>Thanks for joining the GUR beta. Your answers just landed in my inbox, and you can start exploring GUR right now.</p>
+    <p class="email-status" id="emailStatus" hidden></p>
 
     <div class="steps">
       <h2>What happens next</h2>
@@ -98,5 +106,71 @@
       GUR - DJ Live Sequencer Workstation
     </div>
   </div>
+  <script src="js/beta-email-config.js?v=20260725a"></script>
+  <script>
+    (function () {
+      var storageKey = 'gurBetaWelcomePending';
+      var raw;
+
+      try {
+        raw = sessionStorage.getItem(storageKey);
+      } catch (storageError) {
+        return;
+      }
+
+      if (!raw) return;
+
+      var pending;
+      try {
+        pending = JSON.parse(raw);
+      } catch (parseError) {
+        sessionStorage.removeItem(storageKey);
+        return;
+      }
+
+      // Ignore abandoned form data and never send the same welcome twice.
+      if (!pending.createdAt || Date.now() - pending.createdAt > 30 * 60 * 1000) {
+        sessionStorage.removeItem(storageKey);
+        return;
+      }
+
+      var config = window.GUR_EMAILJS || {};
+      var configured = [config.serviceId, config.templateId, config.publicKey]
+        .every(function (value) {
+          return typeof value === 'string'
+            && value.length > 3
+            && value.indexOf('YOUR_') !== 0;
+        });
+
+      if (!configured) return;
+
+      sessionStorage.removeItem(storageKey);
+      var status = document.getElementById('emailStatus');
+      status.hidden = false;
+      status.textContent = 'Sending the download button to your email...';
+
+      fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        credentials: 'omit',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: config.serviceId,
+          template_id: config.templateId,
+          user_id: config.publicKey,
+          template_params: {
+            to_email: pending.email,
+            first_name: pending.firstName
+          }
+        })
+      }).then(function (response) {
+        if (!response.ok) throw new Error('EmailJS returned ' + response.status);
+        status.classList.add('success');
+        status.textContent = 'Download email sent - open it on your Windows PC when ready.';
+      }).catch(function () {
+        status.classList.add('error');
+        status.textContent = 'The email could not be sent, but your download button below is ready.';
+      });
+    }());
+  </script>
 </body>
 </html>
