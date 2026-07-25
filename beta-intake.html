@@ -87,9 +87,9 @@
 
     <form action="https://formsubmit.co/contact@21stcenturyartisan.com" method="POST">
       <!-- FormSubmit config -->
-      <input type="hidden" name="_subject" value="New GUR beta intake">
+      <input type="hidden" name="_subject" id="formSubject" value="New GUR beta intake">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="Submission device" id="submissionDevice" value="Desktop">
       <!-- After submit, land on the neon thank-you page. -->
       <input type="hidden" name="_next" value="https://21stcenturyartisan.github.io/thanks.html">
       <!-- Honeypot: bots fill this, humans don't -->
@@ -104,7 +104,7 @@
         <div class="field">
           <label>Email <span class="req">*</span></label>
           <div class="hint">Where I'll send your download and activation key.</div>
-          <input type="email" name="Email" required placeholder="you@email.com">
+          <input type="email" name="email" required placeholder="you@email.com">
         </div>
       </div>
 
@@ -222,6 +222,39 @@
     </form>
   </div>
   <script>
+    // Label every submission by device. Phone and tablet applicants also receive
+    // the formal checkout email automatically through FormSubmit.
+    (function () {
+      var ua = navigator.userAgent || '';
+      var isIPadOS = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+      var isPhone = /Android.*Mobile|iPhone|iPod|Windows Phone|IEMobile|Opera Mini/i.test(ua);
+      var isTablet = isIPadOS
+        || /iPad|Tablet|Silk/i.test(ua)
+        || (/Android/i.test(ua) && !/Mobile/i.test(ua));
+      var device = isPhone ? 'Phone' : (isTablet ? 'Tablet' : 'Desktop');
+
+      document.getElementById('submissionDevice').value = device;
+
+      if (device !== 'Desktop') {
+        document.getElementById('formSubject').value =
+          'New GUR beta intake - ' + device.toUpperCase();
+
+        var autoResponse = document.createElement('input');
+        autoResponse.type = 'hidden';
+        autoResponse.name = '_autoresponse';
+        autoResponse.value = [
+          'Congratulations - welcome to the GUR beta.',
+          'Thank you for completing the beta application from your ' + device.toLowerCase() + '. Your application has been received, and your next step is secure checkout:',
+          'https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/61d40824-72fb-4e00-8f80-0bd035252667',
+          'If you have a beta coupon, enter it during checkout and confirm that the discounted total is correct before completing the order.',
+          'Once checkout is complete, you will receive your order confirmation and license details.',
+          'Thank you for taking part and helping shape GUR.',
+          'Warm regards,\nNadav Hecht Drayson\n21st Century Artisan\ncontact@21stcenturyartisan.com'
+        ].join('\n\n');
+        document.querySelector('form').appendChild(autoResponse);
+      }
+    }());
+
     // Require at least one OS checkbox (HTML can't group-require checkboxes).
     document.querySelector('form').addEventListener('submit', function (e) {
       var os = document.querySelectorAll('input[name="OS"]:checked');

@@ -61,6 +61,13 @@
   }
   a.btn:hover{box-shadow:0 8px 30px rgba(99,215,212,.4)}
   a.btn:active{transform:translateY(1px)}
+  .actions{display:flex;flex-direction:column;align-items:center;gap:12px}
+  a.btn.secondary{
+    background:transparent;color:var(--accent);border:1px solid var(--accent-dim);
+    box-shadow:none;padding:11px 22px;font-size:13px;
+  }
+  a.btn.secondary:hover{border-color:var(--accent);box-shadow:0 0 18px rgba(99,215,212,.12)}
+  .checkout-note{font-size:12.5px;margin:-10px auto 24px;max-width:400px}
   .foot{color:var(--muted);font-size:12.5px;margin-top:22px}
   .foot a{color:var(--accent);text-decoration:none}
 </style>
@@ -81,7 +88,11 @@
       </ol>
     </div>
 
-    <a class="btn" href="index.html">Back to the site</a>
+    <p class="checkout-note">Already received your beta coupon? Have it ready and confirm the discounted total before completing checkout.</p>
+    <div class="actions">
+      <a class="btn" href="https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/61d40824-72fb-4e00-8f80-0bd035252667">CONTINUE TO SECURE CHECKOUT</a>
+      <a class="btn secondary" href="index.html">BACK TO THE SITE</a>
+    </div>
     <div class="foot">
       Questions? Email <a href="mailto:contact@21stcenturyartisan.com">contact@21stcenturyartisan.com</a><br>
       GUR - DJ Live Sequencer Workstation
