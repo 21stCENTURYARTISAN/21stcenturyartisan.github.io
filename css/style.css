@@ -972,7 +972,7 @@ h2, h3 {
 }
 
 /* ============================================================
-   BETA TESTERS — bottom-of-page CTA band (links to LS checkout).
+   BETA TESTERS — bottom-of-page CTA band (intake + direct trial download).
    Reuses the pricing-card faceplate idiom + the .gur-btn system.
    ============================================================ */
 .beta-section { padding: 20px var(--gutter) 90px; }
@@ -1143,9 +1143,9 @@ h2, h3 {
    phones and tablets: most traffic (Instagram) is mobile, and people happily
    claim a beta spot on their phone to install on their PC later. The intake
    form makes the desktop requirement explicit (OS question + note). */
-/* Free-coupon callout — subtle accent-tinted box so it reads as the key
+/* Trial-download callout — subtle accent-tinted box so it reads as the key
    promise, not fine print. */
-.beta-coupon {
+.beta-trial {
   max-width: 500px;
   margin: 28px auto 0;
   padding: 14px 22px;
@@ -1156,7 +1156,7 @@ h2, h3 {
   font-size: 14px;
   line-height: 1.65;
 }
-.beta-coupon strong { color: var(--accent); }
+.beta-trial strong { color: var(--accent); }
 .beta-note {
   margin: 24px 0 0;
   font-size: 12.5px;

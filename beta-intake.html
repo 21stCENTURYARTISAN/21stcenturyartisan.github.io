@@ -83,7 +83,7 @@
   <div class="wrap">
     <div class="brand"><span class="dot"></span>GUR</div>
     <h1>Welcome to the beta.</h1>
-    <p class="sub">One quick step before I send your download + free activation key. Takes about 2 minutes - it helps me set you up right and makes your feedback count.</p>
+    <p class="sub">One quick step before your direct download. Takes about 2 minutes - it helps me understand your setup and makes your feedback count.</p>
 
     <form action="https://formsubmit.co/contact@21stcenturyartisan.com" method="POST">
       <!-- FormSubmit config -->
@@ -103,7 +103,7 @@
         </div>
         <div class="field">
           <label>Email <span class="req">*</span></label>
-          <div class="hint">Where I'll send your download and activation key.</div>
+          <div class="hint">Phone and tablet applicants also receive the download link here, ready to open later on a Windows PC.</div>
           <input type="email" name="email" required placeholder="you@email.com">
         </div>
       </div>
@@ -217,13 +217,13 @@
         </div>
       </div>
 
-      <button type="submit">Send &amp; get my beta access</button>
+      <button type="submit">Send &amp; download GUR</button>
       <div class="foot">GUR - DJ Live Sequencer Workstation - 21st Century Artisan</div>
     </form>
   </div>
   <script>
     // Label every submission by device. Phone and tablet applicants also receive
-    // the formal checkout email automatically through FormSubmit.
+    // the installer link automatically so they can open it later on a Windows PC.
     (function () {
       var ua = navigator.userAgent || '';
       var isIPadOS = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
@@ -244,10 +244,10 @@
         autoResponse.name = '_autoresponse';
         autoResponse.value = [
           'Congratulations - welcome to the GUR beta.',
-          'Thank you for completing the beta application from your ' + device.toLowerCase() + '. Your application has been received, and your next step is secure checkout:',
-          'https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/61d40824-72fb-4e00-8f80-0bd035252667',
-          'If you have a beta coupon, enter it during checkout and confirm that the discounted total is correct before completing the order.',
-          'Once checkout is complete, you will receive your order confirmation and license details.',
+          'Thank you for completing the beta application from your ' + device.toLowerCase() + '. Your Windows download is ready:',
+          'https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.2/GUR-1.0.2-Setup.exe',
+          'Open this email on your Windows 10 or 11 PC, download the installer, and run it. If Windows SmartScreen appears, choose More info, then Run anyway.',
+          'Your full-featured 30-day trial begins automatically when you first open GUR. No checkout, coupon, or serial key is required.',
           'Thank you for taking part and helping shape GUR.',
           'Warm regards,\nNadav Hecht Drayson\n21st Century Artisan\ncontact@21stcenturyartisan.com'
         ].join('\n\n');
