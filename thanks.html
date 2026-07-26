@@ -108,6 +108,32 @@
   </div>
   <script src="js/beta-email-config.js?v=20260725b"></script>
   <script>
+    // ── Release pointer: the ONLY place the shipping version is written ───────
+    // The download button above is rewritten from this, and the same values are
+    // handed to the EmailJS welcome template as {{download_url}} / {{version}}.
+    //
+    // Bumping a release should be a one-line edit HERE and nowhere else. The
+    // EmailJS template used to hardcode its own copy of the link, which meant
+    // every release silently kept mailing the previous installer until someone
+    // remembered to edit the template by hand in the dashboard.
+    var GUR_RELEASE = {
+      version: '1.0.202',
+      url: 'https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.202/GUR-1.0.202-Setup.exe'
+    };
+
+    // Keep the visible page in step with the pointer above, so the button and
+    // the version labels can never drift from what the email sends.
+    (function () {
+      var btn = document.querySelector('.actions .btn:not(.secondary)');
+      if (btn) {
+        btn.href = GUR_RELEASE.url;
+        btn.textContent = 'DOWNLOAD GUR ' + GUR_RELEASE.version + ' FOR WINDOWS';
+      }
+      document.querySelectorAll('.download-note, .steps li').forEach(function (el) {
+        el.innerHTML = el.innerHTML.replace(/\b\d+\.\d+\.\d+\b/g, GUR_RELEASE.version);
+      });
+    }());
+
     (function () {
       var storageKey = 'gurBetaWelcomePending';
       var raw;
@@ -159,7 +185,12 @@
           user_id: config.publicKey,
           template_params: {
             to_email: pending.email,
-            first_name: pending.firstName
+            first_name: pending.firstName,
+            // The EmailJS template must reference these instead of hardcoding a
+            // link, or it will keep mailing whatever version it was last edited
+            // with. See GUR_RELEASE at the top of this script.
+            download_url: GUR_RELEASE.url,
+            version: GUR_RELEASE.version
           }
         })
       }).then(function (response) {
