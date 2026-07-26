@@ -251,25 +251,29 @@
         return;
       }
 
-      // FormSubmit performs its CAPTCHA/acceptance first. If this application
-      // came from a phone or tablet, leave only the recipient details in this
-      // tab's session storage. The thank-you page sends the separate welcome
-      // template after FormSubmit redirects back; no questionnaire answers are
-      // included in the applicant email.
-      var device = document.getElementById('submissionDevice').value;
-      if (device !== 'Desktop') {
-        var fullName = this.elements['Name'].value.trim();
-        var firstName = fullName.split(/\s+/)[0] || 'there';
-        try {
-          sessionStorage.setItem('gurBetaWelcomePending', JSON.stringify({
-            firstName: firstName,
-            email: this.elements['email'].value.trim(),
-            createdAt: Date.now()
-          }));
-        } catch (storageError) {
-          // The form submission and direct website download still work when
-          // private browsing or storage policy blocks sessionStorage.
-        }
+      // FormSubmit performs its CAPTCHA/acceptance first. Leave only the
+      // recipient details in this tab's session storage; the thank-you page
+      // sends the separate welcome template after FormSubmit redirects back,
+      // so no questionnaire answers are included in the applicant email.
+      //
+      // This used to be gated on `device !== 'Desktop'`, on the theory that a
+      // desktop applicant is already at the PC with the download button in
+      // front of them. In practice that left every desktop applicant - most of
+      // them, for a Windows product - with no emailed link to come back to,
+      // and no record of having been accepted. The thank-you page shows the
+      // same download button to every device anyway, so the split bought
+      // nothing. Everyone gets the welcome email now (2026-07-26).
+      var fullName = this.elements['Name'].value.trim();
+      var firstName = fullName.split(/\s+/)[0] || 'there';
+      try {
+        sessionStorage.setItem('gurBetaWelcomePending', JSON.stringify({
+          firstName: firstName,
+          email: this.elements['email'].value.trim(),
+          createdAt: Date.now()
+        }));
+      } catch (storageError) {
+        // The form submission and direct website download still work when
+        // private browsing or storage policy blocks sessionStorage.
       }
     });
   </script>
