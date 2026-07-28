@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy - GUR · 21st Century Artisan</title>
+  <meta name="description" content="What the GUR website and application collect, who processes it, and how to have it deleted.">
+  <meta name="theme-color" content="#0b0f15">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260725a">
+  <style>
+    .legal-wrap{max-width:760px;margin:0 auto;padding:48px 20px 72px}
+    .legal-wrap h1{font-size:clamp(28px,5vw,42px);margin:0 0 6px;line-height:1.1}
+    .legal-updated{color:var(--muted,#8a97a3);font-size:13px;margin:0 0 34px}
+    .legal-wrap h2{font-size:19px;margin:38px 0 12px;letter-spacing:.02em}
+    .legal-wrap h3{font-size:15px;margin:22px 0 8px}
+    .legal-wrap p,.legal-wrap li{font-size:15.5px;line-height:1.7;color:var(--text-dim,#c2ccd4)}
+    .legal-wrap ul{padding-left:20px;margin:10px 0 16px}
+    .legal-wrap li{margin-bottom:7px}
+    .legal-wrap a{color:var(--accent,#63d7d4)}
+    .legal-lede{font-size:17px;line-height:1.65}
+    .legal-box{border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 20px;margin:22px 0;background:rgba(255,255,255,.03)}
+    .legal-box p:last-child{margin-bottom:0}
+    .legal-table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14.5px}
+    .legal-table th,.legal-table td{text-align:left;padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.1);vertical-align:top}
+    .legal-table th{color:#fff;font-weight:600;white-space:nowrap}
+    .legal-scroll{overflow-x:auto}
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <img src="images/logo.png" alt="21st Century Artisan" class="brand-mark">
+    <span class="brand-name">21st Century Artisan</span>
+  </a>
+  <nav class="header-nav">
+    <a href="index.html#inside"  class="header-link">Inside</a>
+    <a href="index.html#pricing" class="header-link">Pricing</a>
+    <a href="index.html#beta"    class="header-link">Beta</a>
+  </nav>
+</header>
+
+<main>
+  <div class="legal-wrap">
+
+    <h1>Privacy</h1>
+    <p class="legal-updated">Last updated 26 July 2026</p>
+
+    <p class="legal-lede">
+      GUR is made by one person. This page says exactly what the website and the
+      application collect, who else sees it, and how to have it removed. It is
+      written from the code, not from a template.
+    </p>
+
+    <div class="legal-box">
+      <p>
+        <strong>The short version.</strong> Applying for the beta sends your
+        answers to my inbox and your name and email to the service that mails you
+        the download. The application itself only ever contacts the internet to
+        activate or check a licence key and to look for updates. GUR contains no
+        usage tracking of any kind: no analytics, no session or hour counting, no
+        feature reporting, and your audio and projects never leave your machine.
+      </p>
+    </div>
+
+    <h2>Who is responsible</h2>
+    <p>
+      Nadav Hecht Drayson, trading as 21st Century Artisan, is the data
+      controller. Questions, corrections, or deletion requests:
+      <a href="mailto:contact@21stcenturyartisan.com">contact@21stcenturyartisan.com</a>.
+    </p>
+
+    <h2>The beta application form</h2>
+    <p>
+      The beta form collects a name and an email address, which are required, and
+      optionally: which operating systems you use, your controllers and gear, the
+      tools you currently use, other projects, social handles, and what you are
+      hoping GUR does for you. The page also records whether you applied from a
+      phone, tablet or computer, so I know what kind of setup the feedback comes
+      from.
+    </p>
+    <p>
+      The form is delivered by <strong>FormSubmit</strong>, which forwards it to
+      my inbox at contact@21stcenturyartisan.com. Immediately afterwards, your
+      <strong>first name and email address only</strong> are passed to
+      <strong>EmailJS</strong> to send you the welcome message with the download
+      link. Your questionnaire answers are not included in that email and are not
+      given to EmailJS.
+    </p>
+    <p>
+      Basis: your consent, given by submitting the form. Withdraw it at any time
+      by emailing me, and I will delete the application and the address.
+    </p>
+
+    <h2>What the application does</h2>
+    <div class="legal-scroll">
+      <table class="legal-table">
+        <tr><th>When</th><th>What leaves your machine</th><th>Who receives it</th></tr>
+        <tr>
+          <td>Activating a licence key, then roughly every 7 days</td>
+          <td>Your licence key and a non-reversible device fingerprint (a hash of a Windows machine identifier and your Windows logon name)</td>
+          <td>Lemon Squeezy, my licensing provider</td>
+        </tr>
+        <tr>
+          <td>Each launch</td>
+          <td>A request asking what the latest released version is. No personal data is sent; as with any web request, the server sees your IP address.</td>
+          <td>GitHub</td>
+        </tr>
+        <tr>
+          <td>Never</td>
+          <td>Audio, projects, patterns, samples, your music library, MIDI mappings, settings, usage</td>
+          <td>Nobody</td>
+        </tr>
+      </table>
+    </div>
+    <p>
+      The fingerprint exists to enforce the per-device limit on a licence. It
+      cannot be reversed into your name or machine details. This is also stated
+      in section 3 of the licence agreement shown during installation.
+    </p>
+    <p>
+      Basis: performance of the contract, that is, providing and protecting the
+      licence you bought, and my legitimate interest in offering updates.
+    </p>
+
+    <h3>During the free trial</h3>
+    <p>
+      The trial is entirely local. Its start date is stored on your own machine,
+      in your Windows user profile and registry, and is never transmitted. The
+      trial contacts no server at all, apart from the update check above.
+    </p>
+
+    <h3>Files kept on your machine</h3>
+    <p>
+      GUR stores your settings, projects, pattern banks, analysed track data,
+      cue points, MIDI mappings and any separated stems under your own user
+      folder. These stay on your computer. Deleting the application folder
+      removes them.
+    </p>
+
+    <h3>Optional extras</h3>
+    <p>
+      If you install the optional stem separation or export helpers, they run
+      locally on your own machine and send nothing anywhere.
+    </p>
+
+    <h2>Usage tracking</h2>
+    <p>
+      There is none. GUR does not count launches, measure session length, record
+      which features you use, or report anything about how you work. If that ever
+      changes, it will be opt-in, off by default, described on this page, and
+      announced in the release notes rather than slipped in.
+    </p>
+
+    <h2>How long things are kept</h2>
+    <ul>
+      <li>Beta applications: for as long as the beta programme runs, or until you ask me to delete yours.</li>
+      <li>Email addresses used for beta and release mail: until you ask to be removed.</li>
+      <li>Licence and activation records: held by Lemon Squeezy for as long as the licence exists, under their own retention policy.</li>
+    </ul>
+
+    <h2>Your rights</h2>
+    <p>
+      If you are in the EU, the UK, or another place with comparable law, you can
+      ask for a copy of what I hold about you, have it corrected, have it
+      deleted, object to how it is used, or ask for it in a portable form. Email
+      <a href="mailto:contact@21stcenturyartisan.com">contact@21stcenturyartisan.com</a>
+      and I will respond within 30 days. You may also complain to your national
+      data protection authority.
+    </p>
+
+    <h2>Other people's services</h2>
+    <p>
+      FormSubmit, EmailJS, Lemon Squeezy and GitHub each handle data under their
+      own privacy policies. The in-page demo of the browser version of GUR runs
+      entirely in your browser and sends nothing to me.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      If this page changes, the date at the top changes with it. Material changes
+      to what is collected will be called out in the release notes as well.
+    </p>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 21st Century Artisan</span>
+    <ul class="footer-socials">
+      <li>
+        <a href="https://www.instagram.com/21stcenturyartisan/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
