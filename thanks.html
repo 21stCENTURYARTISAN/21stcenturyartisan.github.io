@@ -66,6 +66,12 @@
     box-shadow:none;padding:11px 22px;font-size:13px;
   }
   a.btn.secondary:hover{border-color:var(--accent);box-shadow:0 0 18px rgba(99,215,212,.12)}
+  /* The build for the platform the visitor is NOT on: same size and weight so it
+     stays an obvious download, but outlined so the matching one leads. */
+  a.btn.other{
+    background:transparent;color:var(--accent);border:1px solid var(--accent-dim);box-shadow:none;
+  }
+  a.btn.other:hover{border-color:var(--accent);box-shadow:0 0 18px rgba(99,215,212,.15)}
   .download-note{font-size:12.5px;margin:-10px auto 24px;max-width:400px}
   .email-status{
     max-width:420px;margin:0 auto 18px;padding:10px 13px;border-radius:10px;
@@ -89,18 +95,21 @@
     <div class="steps">
       <h2>What happens next</h2>
       <ol>
-        <li>Download and run the GUR 1.0.203 Windows installer.</li>
-        <li>If SmartScreen appears, choose <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+        <li>Download and run the GUR 1.0.203 installer for your system.</li>
+        <li id="stepWarn">If your system warns that the developer is unrecognised, choose <strong>More info</strong> then <strong>Run anyway</strong> on Windows, or Control-click the package and choose <strong>Open</strong> on macOS.</li>
         <li>Open GUR and your full-featured 30-day trial starts automatically.</li>
       </ol>
     </div>
 
-    <p class="download-note">Windows 10 / 11, 64-bit · Version 1.0.203 · No checkout, coupon, or serial key required.</p>
+    <p class="download-note">Windows 10 / 11, 64-bit &middot; macOS &middot; Version 1.0.203 &middot; No checkout, coupon, or serial key required.</p>
     <div class="actions">
-      <!-- Kept in step with GUR_RELEASE below. The script rewrites this href and
-           label on load, but a superseded release gets drafted on GitHub, so a
-           stale fallback here is a dead 404 link for anyone whose JS did not run. -->
-      <a class="btn" href="https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.203/GUR-1.0.203-Setup.exe">DOWNLOAD GUR 1.0.203 FOR WINDOWS</a>
+      <!-- Both hrefs and labels are kept in step with GUR_RELEASE below, and the
+           script reorders them so the visitor's own platform leads. They are
+           written out in full here because a superseded release gets drafted on
+           GitHub, so a stale fallback is a dead 404 link for anyone whose script
+           did not run - which is exactly the person least able to work around it. -->
+      <a class="btn" data-os="win" href="https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.203/GUR-1.0.203-Setup.exe">DOWNLOAD GUR 1.0.203 FOR WINDOWS</a>
+      <a class="btn" data-os="mac" href="https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.203/GUR-1.0.203-macos.pkg">DOWNLOAD GUR 1.0.203 FOR MACOS</a>
       <a class="btn secondary" href="index.html">BACK TO THE SITE</a>
     </div>
     <div class="foot">
@@ -118,19 +127,53 @@
     // EmailJS template used to hardcode its own copy of the link, which meant
     // every release silently kept mailing the previous installer until someone
     // remembered to edit the template by hand in the dashboard.
+    // `url` keeps its name because it is what the EmailJS template already
+    // reads as {{download_url}}; the mac link is additive.
     var GUR_RELEASE = {
       version: '1.0.203',
-      url: 'https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.203/GUR-1.0.203-Setup.exe'
+      url:    'https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.203/GUR-1.0.203-Setup.exe',
+      urlMac: 'https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.203/GUR-1.0.203-macos.pkg'
     };
 
-    // Keep the visible page in step with the pointer above, so the button and
+    // Keep the visible page in step with the pointer above, so the buttons and
     // the version labels can never drift from what the email sends.
     (function () {
-      var btn = document.querySelector('.actions .btn:not(.secondary)');
-      if (btn) {
-        btn.href = GUR_RELEASE.url;
-        btn.textContent = 'DOWNLOAD GUR ' + GUR_RELEASE.version + ' FOR WINDOWS';
+      var links = {
+        win: { href: GUR_RELEASE.url,    label: 'FOR WINDOWS' },
+        mac: { href: GUR_RELEASE.urlMac, label: 'FOR MACOS' }
+      };
+
+      var buttons = document.querySelectorAll('.actions .btn[data-os]');
+      buttons.forEach(function (btn) {
+        var link = links[btn.getAttribute('data-os')];
+        if (!link) return;
+        btn.href = link.href;
+        btn.textContent = 'DOWNLOAD GUR ' + GUR_RELEASE.version + ' ' + link.label;
+      });
+
+      // Lead with the visitor's own platform and mute the other, rather than
+      // hiding it - detection is a guess, and someone applying from a phone or
+      // browsing on the wrong machine still needs to reach both builds.
+      var ua = navigator.userAgent || '';
+      var isMac = /Macintosh|Mac OS X/i.test(ua) && !/iPhone|iPod/i.test(ua);
+      var actions = document.querySelector('.actions');
+      var mine = document.querySelector('.actions .btn[data-os="' + (isMac ? 'mac' : 'win') + '"]');
+      var other = document.querySelector('.actions .btn[data-os="' + (isMac ? 'win' : 'mac') + '"]');
+      if (actions && mine && other) {
+        other.classList.add('other');
+        // Just "put mine before other" - one move, no firstChild/nextSibling
+        // arithmetic to get wrong around the whitespace text nodes, and BACK TO
+        // THE SITE keeps its place after both because neither one passes it.
+        actions.insertBefore(mine, other);
       }
+
+      var warn = document.getElementById('stepWarn');
+      if (warn) {
+        warn.innerHTML = isMac
+          ? 'If macOS says the package is from an unidentified developer, Control-click it and choose <strong>Open</strong>.'
+          : 'If Windows SmartScreen appears, choose <strong>More info</strong>, then <strong>Run anyway</strong>.';
+      }
+
       document.querySelectorAll('.download-note, .steps li').forEach(function (el) {
         el.innerHTML = el.innerHTML.replace(/\b\d+\.\d+\.\d+\b/g, GUR_RELEASE.version);
       });
@@ -191,14 +234,20 @@
             // The EmailJS template must reference these instead of hardcoding a
             // link, or it will keep mailing whatever version it was last edited
             // with. See GUR_RELEASE at the top of this script.
+            //
+            // An email cannot detect the reader's OS, so the template carries
+            // BOTH buttons and always has. download_url stays Windows so the
+            // existing template keeps working; download_url_mac is additive and
+            // does nothing until the dashboard template references it.
             download_url: GUR_RELEASE.url,
+            download_url_mac: GUR_RELEASE.urlMac,
             version: GUR_RELEASE.version
           }
         })
       }).then(function (response) {
         if (!response.ok) throw new Error('EmailJS returned ' + response.status);
         status.classList.add('success');
-        status.textContent = 'Download email sent - open it on your Windows PC when ready.';
+        status.textContent = 'Download email sent - it has both the Windows and macOS builds.';
       }).catch(function () {
         status.classList.add('error');
         status.textContent = 'The email could not be sent, but your download button below is ready.';
