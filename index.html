@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GUR — DJ Live Sequencer · 21st Century Artisan</title>
+  <title>GUR - DJ Live Sequencer · 21st Century Artisan</title>
   <meta name="description" content="GUR is a standalone DJ Live Sequencer for Windows and macOS with expandable live channels, four decks, piano roll automation, percussion, MIDI mapping and live FX.">
   <meta name="theme-color" content="#0b0f15">
-  <meta property="og:title" content="GUR — DJ Live Sequencer">
+  <meta property="og:title" content="GUR - DJ Live Sequencer">
   <meta property="og:description" content="Expandable live channels, four decks, piano roll automation, percussion, MIDI mapping and live FX. By 21st Century Artisan.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -46,7 +46,7 @@
     <img src="images/gur_logo.png" alt="GUR" class="hero-logo">
     <div class="hero-tagline">DJ LIVE SEQUENCER</div>
     <p class="hero-lede">
-      A standalone instrument for live performance — expandable live channels,
+      A standalone instrument for live performance - expandable live channels,
       drum and percussion engines, four decks, live throw FX, and a sample-accurate
       sequencer in one app.
     </p>
@@ -63,7 +63,7 @@
     </div>
   </section>
 
-  <!-- COUNTDOWN — launch clock to 1 Aug 2026. JS in main.js fills the digits
+  <!-- COUNTDOWN - launch clock to 1 Aug 2026. JS in main.js fills the digits
        and ticks once per second; if the date passes it flips to a LAUNCHED state. -->
   <section class="countdown-section" aria-label="Launch countdown">
     <div class="countdown-card" id="countdown" data-launch="2026-09-01T00:00:00">
@@ -78,11 +78,11 @@
         <div class="cd-sep">:</div>
         <div class="cd-unit"><span class="cd-num" id="cdSecs">--</span><span class="cd-lbl">SEC</span></div>
       </div>
-      <div class="cd-done" id="cdDone" hidden>IT'S LIVE — GUR IS OUT NOW</div>
+      <div class="cd-done" id="cdDone" hidden>IT'S LIVE - GUR IS OUT NOW</div>
     </div>
   </section>
 
-  <!-- SCREENSHOTS — teaser of the native JUCE app -->
+  <!-- SCREENSHOTS - teaser of the native JUCE app -->
   <section id="shots" class="shots-section">
     <div class="section-head">
       <h2>THE NATIVE APP</h2>
@@ -90,33 +90,33 @@
     </div>
     <div class="shots-grid">
       <figure class="shot" data-lightbox="0" tabindex="0" role="button" aria-label="Open larger view of LIVE mode screenshot">
-        <img src="images/gur-live.png" alt="GUR live mode — mixer and expandable live sequencer" loading="lazy">
-        <figcaption>LIVE MODE — 6-channel default, expandable to 8</figcaption>
+        <img src="images/gur-live.png" alt="GUR live mode - mixer and expandable live sequencer" loading="lazy">
+        <figcaption>LIVE MODE - 6-channel default, expandable to 8</figcaption>
       </figure>
       <figure class="shot" data-lightbox="1" tabindex="0" role="button" aria-label="Open larger view of master FX and performance panel screenshot">
         <img src="images/gur-master-fx.png" alt="GUR master dynamics, channel FX engines and performance panel" loading="lazy">
-        <figcaption>MASTER FX — dynamics, channel FX engines + performance panel</figcaption>
+        <figcaption>MASTER FX - dynamics, channel FX engines + performance panel</figcaption>
       </figure>
       <figure class="shot" data-lightbox="2" tabindex="0" role="button" aria-label="Open larger view of MIDI mapping screenshot">
         <img src="images/gur-midi-map.png" alt="GUR MIDI mapping dialog with per-device controller profiles" loading="lazy">
-        <figcaption>MIDI MAPPING — table-driven MIDI Learn, per-device profiles</figcaption>
+        <figcaption>MIDI MAPPING - table-driven MIDI Learn, per-device profiles</figcaption>
       </figure>
       <figure class="shot" data-lightbox="3" tabindex="0" role="button" aria-label="Open larger view of DJ library screenshot">
         <img src="images/gur-dj-library.png" alt="GUR DJ mixer with the built-in collection and playlists" loading="lazy">
-        <figcaption>DJ LIBRARY — collection, playlists + analysed overviews</figcaption>
+        <figcaption>DJ LIBRARY - collection, playlists + analysed overviews</figcaption>
       </figure>
       <figure class="shot" data-lightbox="4" tabindex="0" role="button" aria-label="Open larger view of performance waveform screenshot">
-        <img src="images/gur-performance.png" alt="GUR performance view — dual track-deck waveforms over decks and library" loading="lazy">
-        <figcaption>PERFORMANCE — dual track-deck waveforms, decks + library</figcaption>
+        <img src="images/gur-performance.png" alt="GUR performance view - dual track-deck waveforms over decks and library" loading="lazy">
+        <figcaption>PERFORMANCE - dual track-deck waveforms, decks + library</figcaption>
       </figure>
       <figure class="shot" data-lightbox="5" tabindex="0" role="button" aria-label="Open larger view of track-deck waveform screenshot">
         <img src="images/gur-dj-waveforms.png" alt="GUR waveform band with track decks and the sequencer" loading="lazy">
-        <figcaption>WAVEFORMS — track decks, beatgrids + sequencer</figcaption>
+        <figcaption>WAVEFORMS - track decks, beatgrids + sequencer</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- LIGHTBOX — fullscreen view of the screenshots. Click outside / X / Esc to close,
+  <!-- LIGHTBOX - fullscreen view of the screenshots. Click outside / X / Esc to close,
        arrows or click-image to flip between LIVE and DJ shots. -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden>
     <button class="lb-close" aria-label="Close">×</button>
@@ -128,7 +128,7 @@
     </figure>
   </div>
 
-  <!-- MAIL CHOOSER — in-page "which email app?" picker. We control it, so picking
+  <!-- MAIL CHOOSER - in-page "which email app?" picker. We control it, so picking
        Gmail/Outlook opens a pre-filled compose and "Default mail app" fires mailto:.
        Populated + opened by initMailChooser() from any [data-mail-email] link. -->
   <div class="mailchooser" id="mailChooser" role="dialog" aria-modal="true" aria-label="Choose your email app" hidden>
@@ -157,7 +157,7 @@
            pressing PLAY inside the iframe, which counts as the user gesture. -->
       <iframe id="synthFrame"
               src="https://21stcenturyartisan.github.io/DJLS-public/"
-              title="GUR-V1 — browser demo"
+              title="GUR-V1 - browser demo"
               allow="autoplay; fullscreen; encrypted-media; clipboard-read; clipboard-write"
               allowfullscreen
               loading="lazy"></iframe>
@@ -203,7 +203,7 @@
     <div class="feature-grid">
       <div class="card">
         <h3>POLYMETRIC SEQUENCER</h3>
-        <p>Every channel runs its own 32-step grid with an independent loop length — layer polymeters and patterns that drift in and out of phase. Per-step velocity, accent, modulation, global swing, and sample-accurate timing.</p>
+        <p>Every channel runs its own 32-step grid with an independent loop length - layer polymeters and patterns that drift in and out of phase. Per-step velocity, accent, modulation, global swing, and sample-accurate timing.</p>
       </div>
       <div class="card">
         <h3>OPTIONAL 8-CHANNEL LIVE MODE</h3>
@@ -215,7 +215,7 @@
       </div>
       <div class="card">
         <h3>256-BAR PIANO ROLL</h3>
-        <p>Write long-form melodic parts inside the live sequencer — up to 256 bars per channel, with drawn note lengths, per-beat velocity, accent/open states, copied automation sections, and real-time read/write recording.</p>
+        <p>Write long-form melodic parts inside the live sequencer - up to 256 bars per channel, with drawn note lengths, per-beat velocity, accent/open states, copied automation sections, and real-time read/write recording.</p>
       </div>
       <div class="card">
         <h3>PERCUSSION SYNTH / SAMPLER</h3>
@@ -223,11 +223,11 @@
       </div>
       <div class="card">
         <h3>FOUR FLEXIBLE DECKS</h3>
-        <p>Four decks, each freely assignable — load a sequencer pattern or an audio track onto any of them. The full CDJ workflow, in software — no DAW, no host.</p>
+        <p>Four decks, each freely assignable - load a sequencer pattern or an audio track onto any of them. The full CDJ workflow, in software - no DAW, no host.</p>
       </div>
       <div class="card">
         <h3>DJ LIBRARY &amp; IMPORT</h3>
-        <p>A built-in collection with playlists. Import straight from Traktor, Rekordbox and VirtualDJ — BPM, beatgrids, keys and hot cues come across — or read a live Rekordbox database directly.</p>
+        <p>A built-in collection with playlists. Import straight from Traktor, Rekordbox and VirtualDJ - BPM, beatgrids, keys and hot cues come across - or read a live Rekordbox database directly.</p>
       </div>
       <div class="card">
         <h3>HARMONIC KEY MIXING</h3>
@@ -235,36 +235,36 @@
       </div>
       <div class="card">
         <h3>CDJ-GRADE LOOPS &amp; CUES</h3>
-        <p>Beat loops, manual loops and slip mode, plus 8 saved loops and 8 hot cues per deck — phase-locked to the sequencer with continuous beat-sync, and a direct route into the master FX rack.</p>
+        <p>Beat loops, manual loops and slip mode, plus 8 saved loops and 8 hot cues per deck - phase-locked to the sequencer with continuous beat-sync, and a direct route into the master FX rack.</p>
       </div>
       <div class="card">
         <h3>KEY-LOCK TIME-STRETCH</h3>
-        <p>High-quality stretching keeps pitch locked while you ride the tempo — or unlock it for full vinyl-style pitch bends.</p>
+        <p>High-quality stretching keeps pitch locked while you ride the tempo - or unlock it for full vinyl-style pitch bends.</p>
       </div>
       <div class="card">
         <h3>STEM SEPARATION</h3>
-        <p>Offline 4-stem separation per track — vocals, drums, bass, other. Mute, solo, set the level of each stem and route any stem into the master FX rack — all straight from the deck.</p>
+        <p>Offline 4-stem separation per track - vocals, drums, bass, other. Mute, solo, set the level of each stem and route any stem into the master FX rack - all straight from the deck.</p>
       </div>
       <div class="card">
         <h3>LIVE THROW FX</h3>
-        <p>Hold-to-engage pad rack with eleven throwable effects — flanger, crusher, transient, reverb, delay, glitch, beat-loop, phaser, roll, ping-pong and echo — plus filter sweeps, all beat-synced and quantized to the drop.</p>
+        <p>Hold-to-engage pad rack with eleven throwable effects - flanger, crusher, transient, reverb, delay, glitch, beat-loop, phaser, roll, ping-pong and echo - plus filter sweeps, all beat-synced and quantized to the drop.</p>
       </div>
       <div class="card">
         <h3>MASTER FX RACK</h3>
-        <p>A lush FDN reverb, tempo-synced delay and a musicality layer on the master bus — with a live performance panel to ride them.</p>
+        <p>A lush FDN reverb, tempo-synced delay and a musicality layer on the master bus - with a live performance panel to ride them.</p>
       </div>
       <div class="card">
         <h3>STUDIO-QUALITY EXPORT</h3>
-        <p>Render your set to WAV, AIFF, FLAC, MP3 or AAC — at the right tempo and key, with full metadata. A faithful recording of exactly what you heard.</p>
+        <p>Render your set to WAV, AIFF, FLAC, MP3 or AAC - at the right tempo and key, with full metadata. A faithful recording of exactly what you heard.</p>
       </div>
       <div class="card">
         <h3>MIDI CONTROLLER MAPPING</h3>
-        <p>Table-driven MIDI Learn with per-device profiles. Works out of the box with the Traktor Kontrol S2; map any controller — Traktor S4, Pioneer DDJ-FLX and more.</p>
+        <p>Table-driven MIDI Learn with per-device profiles. Works out of the box with the Traktor Kontrol S2; map any controller - Traktor S4, Pioneer DDJ-FLX and more.</p>
       </div>
     </div>
   </section>
 
-  <!-- PRICING — single elevated card. One launch price, one primary CTA, one
+  <!-- PRICING - single elevated card. One launch price, one primary CTA, one
        quiet secondary. Feature grid uses thin SVG ticks (not emoji). Top-edge
        accent rail + soft inset/outset shadows give the card a premium tactile
        feel without ornament. Update mailto: -> LemonSqueezy checkout URL once
@@ -276,7 +276,7 @@
     </div>
 
     <div class="pricing-card">
-      <div class="pc-eyebrow">GUR — DJ LIVE SEQUENCER</div>
+      <div class="pc-eyebrow">GUR - DJ LIVE SEQUENCER</div>
 
       <div class="pc-price-row">
         <span class="pc-price">$69</span>
@@ -333,7 +333,7 @@
              The Gmail href stays as the no-JS fallback. -->
         <a class="gur-btn gur-btn--primary gur-btn--lg" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@21stcenturyartisan.com&amp;su=GUR%20%E2%80%94%20notify%20me%20at%20launch&amp;body=Please%20let%20me%20know%20when%20GUR%20is%20available%20to%20purchase." target="_blank" rel="noopener"
            data-mail-email="contact@21stcenturyartisan.com"
-           data-mail-subject="GUR — notify me at launch"
+           data-mail-subject="GUR - notify me at launch"
            data-mail-body="Please let me know when GUR is available to purchase.">
           GET LAUNCH NOTIFICATION
         </a>

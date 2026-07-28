@@ -1,4 +1,4 @@
-// 21st Century Artisan · GUR site — single-page; minimal JS.
+// 21st Century Artisan · GUR site - single-page; minimal JS.
 
 document.addEventListener('DOMContentLoaded', () => {
   // Smooth-scroll anchor behaviour is handled by `html { scroll-behavior: smooth }`.
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
    Gmail to a compose window from a web page, and a bare mailto: does
    nothing when no mail handler is registered. So we own the picker: any
    [data-mail-email] link opens this in-page dialog, and each option routes
-   to a guaranteed-working target — Gmail / Outlook web compose (pre-filled),
+   to a guaranteed-working target - Gmail / Outlook web compose (pre-filled),
    the default mail app via mailto:, or copy-to-clipboard. The link's href
    stays a Gmail compose URL as the no-JS fallback. */
 function initMailChooser() {
@@ -73,7 +73,7 @@ function initMailChooser() {
     });
   });
 
-  // Gmail/Outlook open a new tab, default app navigates via mailto: — close after.
+  // Gmail/Outlook open a new tab, default app navigates via mailto: - close after.
   [optGmail, optOutlook, optDefault].forEach(o =>
     o.addEventListener('click', () => setTimeout(close, 0)));
 
@@ -114,7 +114,7 @@ function initMailChooser() {
 /* ─── Launch countdown ───────────────────────────────────────
    Ticks the DAYS:HRS:MIN:SEC digits once per second toward the
    data-launch ISO date on #countdown. When the target passes, the
-   clock is swapped for the "it's live" message. Local-time based —
+   clock is swapped for the "it's live" message. Local-time based -
    the launch date is read as midnight in the visitor's own zone,
    which is what a "launching September 1" promise reads as to them. */
 function initCountdown() {
@@ -137,7 +137,7 @@ function initCountdown() {
   function tick() {
     const diff = target - Date.now();
     if (diff <= 0) {
-      // Launch reached — reveal the live message, retire the ticking clock.
+      // Launch reached - reveal the live message, retire the ticking clock.
       if (clock) clock.hidden = true;
       if (done)  done.hidden = false;
       root.classList.add('is-live');

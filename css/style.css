@@ -1,5 +1,5 @@
 /* ============================================================================
-   21st Century Artisan · GUR — single-page site
+   21st Century Artisan · GUR - single-page site
    Palette + typography mirror the in-app aesthetic (kUiAccent #63d7d4, dark).
    ============================================================================ */
 
@@ -253,7 +253,7 @@ h2, h3 {
    REUSABLE BUTTON SYSTEM (.gur-btn)
    Single source of truth for every CTA on the page. Modifiers compose:
      .gur-btn .gur-btn--primary .gur-btn--lg
-   Tactile hardware language — soft inset top highlight + recessed bottom
+   Tactile hardware language - soft inset top highlight + recessed bottom
    edge on the primary; ghost variant for secondary CTAs. No bounce/scale
    on hover. All transitions through one --btn-trans timing function so
    states feel coherent.
@@ -296,7 +296,7 @@ h2, h3 {
   outline-offset: 3px;
 }
 
-/* Primary — tactile accent. Inset top highlight gives the chamfered hardware
+/* Primary - tactile accent. Inset top highlight gives the chamfered hardware
    feel; subtle outer glow grows on hover. Active state recesses slightly. */
 .gur-btn--primary {
   background: linear-gradient(180deg, var(--accent) 0%, #4ec0bd 100%);
@@ -323,7 +323,7 @@ h2, h3 {
     0 2px 10px rgba(99,215,212,0.32);
 }
 
-/* Ghost — secondary. Quiet outline, accent shift on hover. */
+/* Ghost - secondary. Quiet outline, accent shift on hover. */
 .gur-btn--ghost {
   background: rgba(255,255,255,0.02);
   color: var(--text);
@@ -350,7 +350,7 @@ h2, h3 {
 .gur-btn--sm { height: 40px; font-size: 12px; padding: 0 20px; }
 
 /* ═══════════════════════════════════════════════════════
-   PRICING SECTION — single elevated card
+   PRICING SECTION - single elevated card
    ═══════════════════════════════════════════════════════ */
 .pricing-section { padding: 70px var(--gutter) 80px; }
 
@@ -371,7 +371,7 @@ h2, h3 {
   position: relative;
   overflow: hidden;
 }
-/* Faint accent rail across the top edge — like a hardware faceplate LED bar. */
+/* Faint accent rail across the top edge - like a hardware faceplate LED bar. */
 .pricing-card::before {
   content: '';
   position: absolute;
@@ -504,7 +504,7 @@ h2, h3 {
   margin: 0;
 }
 
-/* ── SCREENSHOTS — native-app teaser ────────────────────── */
+/* ── SCREENSHOTS - native-app teaser ────────────────────── */
 .shots-section { padding: 50px var(--gutter) 60px; }
 .shots-grid {
   max-width: var(--maxw);
@@ -704,7 +704,7 @@ h2, h3 {
   border: 0;
   display: block;
 }
-/* Fullscreen button — sits directly under the iframe, right-aligned, with
+/* Fullscreen button - sits directly under the iframe, right-aligned, with
    the same max-width so it visually belongs to the player. Right-aligned so
    it never overlaps the synth's controls (which cluster top-left/center). */
 .try-actions {
@@ -865,7 +865,7 @@ h2, h3 {
 }
 
 /* ============================================================================
-   Responsive — tablet (≤900px) + phone (≤560px) + tiny (≤380px).
+   Responsive - tablet (≤900px) + phone (≤560px) + tiny (≤380px).
    The hero, sections, iframe and lightbox all need tightening on small screens.
    ============================================================================ */
 
@@ -918,7 +918,7 @@ h2, h3 {
   .hero-cta      { flex-direction: column; gap: 10px; width: 100%; max-width: 320px; margin: 0 auto; }
   .hero-cta .gur-btn { width: 100%; }
 
-  /* Pricing card — tighter padding on phones, single-column feature grid,
+  /* Pricing card - tighter padding on phones, single-column feature grid,
      stacked CTAs at full width. Numbers stay legible via clamp() above. */
   .pricing-section { padding: 50px var(--gutter) 60px; }
   .pricing-card    { padding: 40px 24px; border-radius: 16px; }
@@ -936,7 +936,7 @@ h2, h3 {
 
   /* Phones: iframe stays 16:9 (matches synth's locked 1280x720). Min-height
      floor so it can't collapse to a sliver. Fullscreen button stays right-
-     aligned under the iframe — never overlaps the synth UI. */
+     aligned under the iframe - never overlaps the synth UI. */
   .iframe-wrap { aspect-ratio: 16 / 9; border-radius: 10px; min-height: 240px; max-width: 96vw; }
   .try-actions { max-width: 96vw; margin-top: 10px; justify-content: center; }
   .fs-btn      { font-size: 13px; padding: 12px 24px 11px; }   /* easier tap target */
@@ -955,7 +955,7 @@ h2, h3 {
   .shot figcaption { font-size: 11px; padding: 9px 12px 11px; letter-spacing: 0.14em; }
 }
 
-/* Tiny phones — keep the iframe usable even at iPhone-SE widths. */
+/* Tiny phones - keep the iframe usable even at iPhone-SE widths. */
 @media (max-width: 380px) {
   .hero-logo    { max-width: 240px; width: 80vw; }
   .hero-lede    { font-size: 14.5px; }
@@ -964,7 +964,7 @@ h2, h3 {
   .iframe-wrap  { aspect-ratio: 3 / 4; }   /* portrait-shaped iframe on very small */
 }
 
-/* Landscape phone — give the iframe full screen height since it's the focus. */
+/* Landscape phone - give the iframe full screen height since it's the focus. */
 @media (max-height: 520px) and (orientation: landscape) {
   .iframe-wrap { aspect-ratio: 16 / 9; }
   .hero        { padding: 24px var(--gutter) 20px; }
@@ -972,7 +972,7 @@ h2, h3 {
 }
 
 /* ============================================================
-   BETA TESTERS — bottom-of-page CTA band (intake + direct trial download).
+   BETA TESTERS - bottom-of-page CTA band (intake + direct trial download).
    Reuses the pricing-card faceplate idiom + the .gur-btn system.
    ============================================================ */
 .beta-section { padding: 20px var(--gutter) 90px; }
@@ -995,7 +995,7 @@ h2, h3 {
   position: relative;
   overflow: hidden;
 }
-/* Accent rail across the top edge — matches the pricing card. */
+/* Accent rail across the top edge - matches the pricing card. */
 .beta-card::before {
   content: '';
   position: absolute;
@@ -1064,7 +1064,7 @@ h2, h3 {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-dim);
 }
-/* Honeypot — kept out of view and off the accessibility tree. */
+/* Honeypot - kept out of view and off the accessibility tree. */
 .beta-honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 @media (max-width: 520px) {
   .beta-form { flex-direction: column; }
@@ -1072,7 +1072,7 @@ h2, h3 {
   .beta-form .gur-btn { width: 100%; }
 }
 /* ============================================================
-   INSTRUMENT-COUNT BANNER (features section) — 3 / 4 / 4 tiles.
+   INSTRUMENT-COUNT BANNER (features section) - 3 / 4 / 4 tiles.
    ============================================================ */
 .synth-banner {
   max-width: 920px;
@@ -1143,7 +1143,7 @@ h2, h3 {
    phones and tablets: most traffic (Instagram) is mobile, and people happily
    claim a beta spot on their phone to install on their PC later. The intake
    form makes the desktop requirement explicit (OS question + note). */
-/* Trial-download callout — subtle accent-tinted box so it reads as the key
+/* Trial-download callout - subtle accent-tinted box so it reads as the key
    promise, not fine print. */
 .beta-trial {
   max-width: 500px;
