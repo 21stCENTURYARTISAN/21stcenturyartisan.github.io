@@ -142,7 +142,7 @@
       </ol>
     </div>
 
-    <p class="download-note">Windows 10 / 11, 64-bit &middot; macOS &middot; Version 1.0.203 &middot; No checkout, coupon, or serial key required.</p>
+    <p class="download-note">Windows 10 / 11, 64-bit &middot; macOS &middot; Version 1.0.204 &middot; No checkout, coupon, or serial key required.</p>
     <p class="actions-label">Download anyway</p>
     <div class="actions">
       <!-- Both hrefs and labels are kept in step with GUR_RELEASE below, and the
@@ -150,7 +150,7 @@
            written out in full here because a superseded release gets drafted on
            GitHub, so a stale fallback is a dead 404 link for anyone whose script
            did not run - which is exactly the person least able to work around it. -->
-      <a class="btn" data-os="win" href="https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.203/GUR-1.0.203-Setup.exe">DOWNLOAD GUR 1.0.203 FOR WINDOWS</a>
+      <a class="btn" data-os="win" href="https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.204/GUR-1.0.204-Setup.exe">DOWNLOAD GUR 1.0.204 FOR WINDOWS</a>
       <a class="btn" data-os="mac" href="https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.203/GUR-1.0.203-macos.pkg">DOWNLOAD GUR 1.0.203 FOR MACOS</a>
       <a class="btn secondary" href="index.html">BACK TO THE SITE</a>
     </div>
@@ -171,9 +171,17 @@
     // remembered to edit the template by hand in the dashboard.
     // `url` keeps its name because it is what the EmailJS template already
     // reads as {{download_url}}; the mac link is additive.
+    //
+    // The two platforms can sit on DIFFERENT versions: a Windows-only release
+    // ships without waiting for a Mac to build its .pkg. So each has its own
+    // version string, and every label is drawn from the matching pair - never
+    // stamp the Windows version onto the macOS button, or the page promises a
+    // build that release does not contain. When macOS catches up, set both to
+    // the same number.
     var GUR_RELEASE = {
-      version: '1.0.203',
-      url:    'https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.203/GUR-1.0.203-Setup.exe',
+      version:    '1.0.204',
+      versionMac: '1.0.203',
+      url:    'https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.204/GUR-1.0.204-Setup.exe',
       urlMac: 'https://github.com/21stCENTURYARTISAN/DJLS-public/releases/download/v1.0.203/GUR-1.0.203-macos.pkg'
     };
 
@@ -181,8 +189,8 @@
     // the version labels can never drift from what the email sends.
     (function () {
       var links = {
-        win: { href: GUR_RELEASE.url,    label: 'FOR WINDOWS' },
-        mac: { href: GUR_RELEASE.urlMac, label: 'FOR MACOS' }
+        win: { href: GUR_RELEASE.url,    ver: GUR_RELEASE.version,    label: 'FOR WINDOWS' },
+        mac: { href: GUR_RELEASE.urlMac, ver: GUR_RELEASE.versionMac, label: 'FOR MACOS' }
       };
 
       var buttons = document.querySelectorAll('.actions .btn[data-os]');
@@ -190,7 +198,7 @@
         var link = links[btn.getAttribute('data-os')];
         if (!link) return;
         btn.href = link.href;
-        btn.textContent = 'DOWNLOAD GUR ' + GUR_RELEASE.version + ' ' + link.label;
+        btn.textContent = 'DOWNLOAD GUR ' + link.ver + ' ' + link.label;
       });
 
       // Lead with the visitor's own platform and mute the other, rather than
@@ -216,8 +224,11 @@
           : 'If Windows SmartScreen appears, choose <strong>More info</strong>, then <strong>Run anyway</strong>.';
       }
 
+      // Show the visitor the version THEY are about to download, not whichever
+      // platform happens to be ahead.
+      var myVersion = isMac ? GUR_RELEASE.versionMac : GUR_RELEASE.version;
       document.querySelectorAll('.download-note, .steps li').forEach(function (el) {
-        el.innerHTML = el.innerHTML.replace(/\b\d+\.\d+\.\d+\b/g, GUR_RELEASE.version);
+        el.innerHTML = el.innerHTML.replace(/\b\d+\.\d+\.\d+\b/g, myVersion);
       });
     }());
 
@@ -281,9 +292,14 @@
             // BOTH buttons and always has. download_url stays Windows so the
             // existing template keeps working; download_url_mac is additive and
             // does nothing until the dashboard template references it.
+            //
+            // version/version_mac are separate because the two platforms can
+            // sit on different releases; the template must label each button
+            // with its own.
             download_url: GUR_RELEASE.url,
             download_url_mac: GUR_RELEASE.urlMac,
-            version: GUR_RELEASE.version
+            version: GUR_RELEASE.version,
+            version_mac: GUR_RELEASE.versionMac
           }
         })
       }).then(function (response) {
