@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GUR - DJ Live Sequencer · 21st Century Artisan</title>
+  <title data-i18n="title.index">GUR - DJ Live Sequencer · 21st Century Artisan</title>
   <meta name="description" content="GUR is a standalone DJ Live Sequencer for Windows and macOS with expandable live channels, four decks, piano roll automation, percussion, MIDI mapping and live FX.">
   <meta name="theme-color" content="#0b0f15">
   <meta property="og:title" content="GUR - DJ Live Sequencer">
@@ -14,9 +14,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260725a">
+  <link rel="stylesheet" href="css/style.css?v=20260903a">
 </head>
-<body>
+<body data-page="index">
 
 <!-- HEADER -->
 <header class="site-header">
@@ -25,10 +25,15 @@
     <span class="brand-name">21st Century Artisan</span>
   </a>
   <nav class="header-nav">
-    <a href="#try"      class="header-link">Try It</a>
-    <a href="#inside"   class="header-link">Inside</a>
-    <a href="#pricing"  class="header-link">Pricing</a>
-    <a href="#about"    class="header-link">About</a>
+    <a href="#try"      class="header-link" data-i18n="nav.try">Try It</a>
+    <a href="#inside"   class="header-link" data-i18n="nav.inside">Inside</a>
+    <a href="#pricing"  class="header-link" data-i18n="nav.pricing">Pricing</a>
+    <a href="academy.html" class="header-link" data-i18n="nav.academy">Academy</a>
+    <a href="#about"    class="header-link" data-i18n="nav.about">About</a>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="he" lang="he" aria-pressed="false">עב</button>
+    </div>
     <a href="https://www.instagram.com/21stcenturyartisan/" target="_blank" rel="noopener" class="header-ig" aria-label="Instagram">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
         <rect x="3" y="3" width="18" height="18" rx="5"/>
@@ -45,7 +50,7 @@
   <section class="hero">
     <img src="images/gur_logo.png" alt="GUR" class="hero-logo">
     <div class="hero-tagline">DJ LIVE SEQUENCER</div>
-    <p class="hero-lede">
+    <p class="hero-lede" data-i18n="hero.lede">
       A standalone instrument for live performance - expandable live channels,
       drum and percussion engines, four decks, live throw FX, and a sample-accurate
       sequencer in one app.
@@ -57,9 +62,9 @@
         <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true">
           <path d="M3 2 L13 8 L3 14 Z"/>
         </svg>
-        TRY THE DEMO
+        <span data-i18n="hero.try">TRY THE DEMO</span>
       </a>
-      <a class="gur-btn gur-btn--ghost" href="#pricing">SEE PRICING</a>
+      <a class="gur-btn gur-btn--ghost" href="#pricing" data-i18n="hero.pricing">SEE PRICING</a>
     </div>
   </section>
 
@@ -67,51 +72,51 @@
        and ticks once per second; if the date passes it flips to a LAUNCHED state. -->
   <section class="countdown-section" aria-label="Launch countdown">
     <div class="countdown-card" id="countdown" data-launch="2026-09-09T00:00:00">
-      <div class="cd-eyebrow">LAUNCHING</div>
-      <div class="cd-date">SEPTEMBER 9, 2026</div>
+      <div class="cd-eyebrow" data-i18n="cd.eyebrow">LAUNCHING</div>
+      <div class="cd-date" data-i18n="cd.date">SEPTEMBER 9, 2026</div>
       <div class="cd-clock" id="cdClock" role="timer" aria-live="off">
-        <div class="cd-unit"><span class="cd-num" id="cdDays">--</span><span class="cd-lbl">DAYS</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cdDays">--</span><span class="cd-lbl" data-i18n="cd.days">DAYS</span></div>
         <div class="cd-sep">:</div>
-        <div class="cd-unit"><span class="cd-num" id="cdHours">--</span><span class="cd-lbl">HRS</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cdHours">--</span><span class="cd-lbl" data-i18n="cd.hrs">HRS</span></div>
         <div class="cd-sep">:</div>
-        <div class="cd-unit"><span class="cd-num" id="cdMins">--</span><span class="cd-lbl">MIN</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cdMins">--</span><span class="cd-lbl" data-i18n="cd.min">MIN</span></div>
         <div class="cd-sep">:</div>
-        <div class="cd-unit"><span class="cd-num" id="cdSecs">--</span><span class="cd-lbl">SEC</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cdSecs">--</span><span class="cd-lbl" data-i18n="cd.sec">SEC</span></div>
       </div>
-      <div class="cd-done" id="cdDone" hidden>IT'S LIVE - GUR IS OUT NOW</div>
+      <div class="cd-done" id="cdDone" data-i18n="cd.done" hidden>IT'S LIVE - GUR IS OUT NOW</div>
     </div>
   </section>
 
   <!-- SCREENSHOTS - teaser of the native JUCE app -->
   <section id="shots" class="shots-section">
     <div class="section-head">
-      <h2>THE NATIVE APP</h2>
-      <p>A glance. Standalone Windows / macOS, low-latency, ASIO + MIDI.</p>
+      <h2 data-i18n="shots.h2">THE NATIVE APP</h2>
+      <p data-i18n="shots.p">A glance. Standalone Windows / macOS, low-latency, ASIO + MIDI.</p>
     </div>
     <div class="shots-grid">
       <figure class="shot" data-lightbox="0" tabindex="0" role="button" aria-label="Open larger view of LIVE mode screenshot">
         <img src="images/gur-live.png" alt="GUR live mode - mixer and expandable live sequencer" loading="lazy">
-        <figcaption>LIVE MODE - 6-channel default, expandable to 8</figcaption>
+        <figcaption data-i18n="shots.c0">LIVE MODE - 6-channel default, expandable to 8</figcaption>
       </figure>
       <figure class="shot" data-lightbox="1" tabindex="0" role="button" aria-label="Open larger view of master FX and performance panel screenshot">
         <img src="images/gur-master-fx.png" alt="GUR master dynamics, channel FX engines and performance panel" loading="lazy">
-        <figcaption>MASTER FX - dynamics, channel FX engines + performance panel</figcaption>
+        <figcaption data-i18n="shots.c1">MASTER FX - dynamics, channel FX engines + performance panel</figcaption>
       </figure>
       <figure class="shot" data-lightbox="2" tabindex="0" role="button" aria-label="Open larger view of MIDI mapping screenshot">
         <img src="images/gur-midi-map.png" alt="GUR MIDI mapping dialog with per-device controller profiles" loading="lazy">
-        <figcaption>MIDI MAPPING - table-driven MIDI Learn, per-device profiles</figcaption>
+        <figcaption data-i18n="shots.c2">MIDI MAPPING - table-driven MIDI Learn, per-device profiles</figcaption>
       </figure>
       <figure class="shot" data-lightbox="3" tabindex="0" role="button" aria-label="Open larger view of DJ library screenshot">
         <img src="images/gur-dj-library.png" alt="GUR DJ mixer with the built-in collection and playlists" loading="lazy">
-        <figcaption>DJ LIBRARY - collection, playlists + analysed overviews</figcaption>
+        <figcaption data-i18n="shots.c3">DJ LIBRARY - collection, playlists + analysed overviews</figcaption>
       </figure>
       <figure class="shot" data-lightbox="4" tabindex="0" role="button" aria-label="Open larger view of performance waveform screenshot">
         <img src="images/gur-performance.png" alt="GUR performance view - dual track-deck waveforms over decks and library" loading="lazy">
-        <figcaption>PERFORMANCE - dual track-deck waveforms, decks + library</figcaption>
+        <figcaption data-i18n="shots.c4">PERFORMANCE - dual track-deck waveforms, decks + library</figcaption>
       </figure>
       <figure class="shot" data-lightbox="5" tabindex="0" role="button" aria-label="Open larger view of track-deck waveform screenshot">
         <img src="images/gur-dj-waveforms.png" alt="GUR waveform band with track decks and the sequencer" loading="lazy">
-        <figcaption>WAVEFORMS - track decks, beatgrids + sequencer</figcaption>
+        <figcaption data-i18n="shots.c5">WAVEFORMS - track decks, beatgrids + sequencer</figcaption>
       </figure>
     </div>
   </section>
@@ -133,14 +138,16 @@
        Populated + opened by initMailChooser() from any [data-mail-email] link. -->
   <div class="mailchooser" id="mailChooser" role="dialog" aria-modal="true" aria-label="Choose your email app" hidden>
     <div class="mc-card">
-      <button class="mc-close" aria-label="Close">×</button>
-      <h3 class="mc-title">Open email with…</h3>
-      <p class="mc-sub" id="mcTo"></p>
+      <button class="mc-close" aria-label="Close" data-i18n-attr="aria-label:mc.close">×</button>
+      <h3 class="mc-title" data-i18n="mc.title">Open email with…</h3>
+      <p class="mc-sub" id="mcTo" dir="ltr"></p>
       <div class="mc-options">
-        <a class="mc-opt" data-mc="gmail" target="_blank" rel="noopener">Gmail</a>
-        <a class="mc-opt" data-mc="outlook" target="_blank" rel="noopener">Outlook</a>
-        <a class="mc-opt" data-mc="default">Default mail app</a>
-        <button class="mc-opt mc-copy" type="button" data-mc="copy">Copy email address</button>
+        <a class="mc-opt" data-mc="gmail" target="_blank" rel="noopener" data-i18n="mc.gmail">Gmail</a>
+        <a class="mc-opt" data-mc="outlook" target="_blank" rel="noopener" data-i18n="mc.outlook">Outlook</a>
+        <a class="mc-opt" data-mc="default" data-i18n="mc.default">Default mail app</a>
+        <button class="mc-opt mc-copy" type="button" data-mc="copy" data-i18n="mc.copy"
+                data-i18n-attr="data-label:mc.copy,data-copied:mc.copied"
+                data-label="Copy email address" data-copied="Copied!">Copy email address</button>
       </div>
     </div>
   </div>
@@ -148,8 +155,8 @@
   <!-- TRY IT LIVE -->
   <section id="try" class="try-section">
     <div class="section-head">
-      <h2>TRY IT IN YOUR BROWSER</h2>
-      <p>The browser-based reference. Click LIVE inside the frame to start, then use the mixer and sequencer to build beats.</p>
+      <h2 data-i18n="try.h2">TRY IT IN YOUR BROWSER</h2>
+      <p data-i18n="try.p">The browser-based reference. Click LIVE inside the frame to start, then use the mixer and sequencer to build beats.</p>
     </div>
     <div class="iframe-wrap">
       <!-- allow="autoplay; fullscreen" keeps the Web Audio context running when the
@@ -168,98 +175,98 @@
           <path d="M4 9V4h5"/><path d="M20 9V4h-5"/>
           <path d="M4 15v5h5"/><path d="M20 15v5h-5"/>
         </svg>
-        OPEN FULLSCREEN
+        <span data-i18n="try.fs">OPEN FULLSCREEN</span>
       </button>
     </div>
-    <p class="try-note">Press PLAY inside the frame to start audio. Best in Chrome / Edge / Firefox on desktop. The full native app (low-latency, ASIO, MIDI) launches when it's ready.</p>
+    <p class="try-note" data-i18n="try.note">Press PLAY inside the frame to start audio. Best in Chrome / Edge / Firefox on desktop. The full native app (low-latency, ASIO, MIDI) launches when it's ready.</p>
   </section>
 
   <!-- FEATURE GRID -->
   <section id="inside" class="features-section">
     <div class="section-head">
-      <h2>WHAT'S INSIDE</h2>
-      <p>One app. No DAW. No host. No plugins.</p>
+      <h2 data-i18n="inside.h2">WHAT'S INSIDE</h2>
+      <p data-i18n="inside.p">One app. No DAW. No host. No plugins.</p>
     </div>
 
     <!-- Instrument-count banner: 4 drum/percussion + 4 signature + 4 classic = 12 engines. -->
     <div class="synth-banner">
-      <p class="sb-lead">Twelve instruments in one rack</p>
+      <p class="sb-lead" data-i18n="sb.lead">Twelve instruments in one rack</p>
       <div class="sb-tiles">
         <div class="sb-tile">
           <span class="sb-num">4</span>
-          <span class="sb-label">Drum, percussion &amp; sampler engines</span>
+          <span class="sb-label" data-i18n="sb.l0">Drum, percussion &amp; sampler engines</span>
         </div>
         <div class="sb-tile">
           <span class="sb-num">4</span>
-          <span class="sb-label">Signature synths</span>
+          <span class="sb-label" data-i18n="sb.l1">Signature synths</span>
         </div>
         <div class="sb-tile">
           <span class="sb-num">4</span>
-          <span class="sb-label">Classic synths</span>
+          <span class="sb-label" data-i18n="sb.l2">Classic synths</span>
         </div>
       </div>
     </div>
 
     <div class="feature-grid">
       <div class="card">
-        <h3>POLYMETRIC SEQUENCER</h3>
-        <p>Every channel runs its own 32-step grid with an independent loop length - layer polymeters and patterns that drift in and out of phase. Per-step velocity, accent, modulation, global swing, and sample-accurate timing.</p>
+        <h3 data-i18n="f0.h">POLYMETRIC SEQUENCER</h3>
+        <p data-i18n="f0.p">Every channel runs its own 32-step grid with an independent loop length - layer polymeters and patterns that drift in and out of phase. Per-step velocity, accent, modulation, global swing, and sample-accurate timing.</p>
       </div>
       <div class="card">
-        <h3>OPTIONAL 8-CHANNEL LIVE MODE</h3>
-        <p>GUR still opens in the clean 6-channel Live Mode by default. Add CH7 and CH8 only when you need them, and the live rack reflows into the same performance area instead of opening a separate page.</p>
+        <h3 data-i18n="f1.h">OPTIONAL 8-CHANNEL LIVE MODE</h3>
+        <p data-i18n="f1.p">GUR still opens in the clean 6-channel Live Mode by default. Add CH7 and CH8 only when you need them, and the live rack reflows into the same performance area instead of opening a separate page.</p>
       </div>
       <div class="card">
-        <h3>GLOBAL OR CHANNEL PATTERNS</h3>
-        <p>The pattern row can target the whole live set or one selected channel. Switch CH1-CH8 into focus, load or save a single channel pattern, then return to global mode for full-pattern changes.</p>
+        <h3 data-i18n="f2.h">GLOBAL OR CHANNEL PATTERNS</h3>
+        <p data-i18n="f2.p">The pattern row can target the whole live set or one selected channel. Switch CH1-CH8 into focus, load or save a single channel pattern, then return to global mode for full-pattern changes.</p>
       </div>
       <div class="card">
-        <h3>256-BAR PIANO ROLL</h3>
-        <p>Write long-form melodic parts inside the live sequencer - up to 256 bars per channel, with drawn note lengths, per-beat velocity, accent/open states, copied automation sections, and real-time read/write recording.</p>
+        <h3 data-i18n="f3.h">256-BAR PIANO ROLL</h3>
+        <p data-i18n="f3.p">Write long-form melodic parts inside the live sequencer - up to 256 bars per channel, with drawn note lengths, per-beat velocity, accent/open states, copied automation sections, and real-time read/write recording.</p>
       </div>
       <div class="card">
-        <h3>PERCUSSION SYNTH / SAMPLER</h3>
-        <p>A new flexible Percussion engine sits alongside Kick, Snare, Hats, Bass, Lead and the classics. Load it into any live channel slot, including the optional seventh and eighth channels.</p>
+        <h3 data-i18n="f4.h">PERCUSSION SYNTH / SAMPLER</h3>
+        <p data-i18n="f4.p">A new flexible Percussion engine sits alongside Kick, Snare, Hats, Bass, Lead and the classics. Load it into any live channel slot, including the optional seventh and eighth channels.</p>
       </div>
       <div class="card">
-        <h3>FOUR FLEXIBLE DECKS</h3>
-        <p>Four decks, each freely assignable - load a sequencer pattern or an audio track onto any of them. The full CDJ workflow, in software - no DAW, no host.</p>
+        <h3 data-i18n="f5.h">FOUR FLEXIBLE DECKS</h3>
+        <p data-i18n="f5.p">Four decks, each freely assignable - load a sequencer pattern or an audio track onto any of them. The full CDJ workflow, in software - no DAW, no host.</p>
       </div>
       <div class="card">
-        <h3>DJ LIBRARY &amp; IMPORT</h3>
-        <p>A built-in collection with playlists. Import straight from Traktor, Rekordbox and VirtualDJ - BPM, beatgrids, keys and hot cues come across - or read a live Rekordbox database directly.</p>
+        <h3 data-i18n="f6.h">DJ LIBRARY &amp; IMPORT</h3>
+        <p data-i18n="f6.p">A built-in collection with playlists. Import straight from Traktor, Rekordbox and VirtualDJ - BPM, beatgrids, keys and hot cues come across - or read a live Rekordbox database directly.</p>
       </div>
       <div class="card">
-        <h3>HARMONIC KEY MIXING</h3>
-        <p>Automatic musical / Camelot key per deck, with real transposition. Mix in key across sequencer and track decks, and shift any deck to match.</p>
+        <h3 data-i18n="f7.h">HARMONIC KEY MIXING</h3>
+        <p data-i18n="f7.p">Automatic musical / Camelot key per deck, with real transposition. Mix in key across sequencer and track decks, and shift any deck to match.</p>
       </div>
       <div class="card">
-        <h3>CDJ-GRADE LOOPS &amp; CUES</h3>
-        <p>Beat loops, manual loops and slip mode, plus 8 saved loops and 8 hot cues per deck - phase-locked to the sequencer with continuous beat-sync, and a direct route into the master FX rack.</p>
+        <h3 data-i18n="f8.h">CDJ-GRADE LOOPS &amp; CUES</h3>
+        <p data-i18n="f8.p">Beat loops, manual loops and slip mode, plus 8 saved loops and 8 hot cues per deck - phase-locked to the sequencer with continuous beat-sync, and a direct route into the master FX rack.</p>
       </div>
       <div class="card">
-        <h3>KEY-LOCK TIME-STRETCH</h3>
-        <p>High-quality stretching keeps pitch locked while you ride the tempo - or unlock it for full vinyl-style pitch bends.</p>
+        <h3 data-i18n="f9.h">KEY-LOCK TIME-STRETCH</h3>
+        <p data-i18n="f9.p">High-quality stretching keeps pitch locked while you ride the tempo - or unlock it for full vinyl-style pitch bends.</p>
       </div>
       <div class="card">
-        <h3>STEM SEPARATION</h3>
-        <p>Offline 4-stem separation per track - vocals, drums, bass, other. Mute, solo, set the level of each stem and route any stem into the master FX rack - all straight from the deck.</p>
+        <h3 data-i18n="f10.h">STEM SEPARATION</h3>
+        <p data-i18n="f10.p">Offline 4-stem separation per track - vocals, drums, bass, other. Mute, solo, set the level of each stem and route any stem into the master FX rack - all straight from the deck.</p>
       </div>
       <div class="card">
-        <h3>LIVE THROW FX</h3>
-        <p>Hold-to-engage pad rack with eleven throwable effects - flanger, crusher, transient, reverb, delay, glitch, beat-loop, phaser, roll, ping-pong and echo - plus filter sweeps, all beat-synced and quantized to the drop.</p>
+        <h3 data-i18n="f11.h">LIVE THROW FX</h3>
+        <p data-i18n="f11.p">Hold-to-engage pad rack with eleven throwable effects - flanger, crusher, transient, reverb, delay, glitch, beat-loop, phaser, roll, ping-pong and echo - plus filter sweeps, all beat-synced and quantized to the drop.</p>
       </div>
       <div class="card">
-        <h3>MASTER FX RACK</h3>
-        <p>A lush FDN reverb, tempo-synced delay and a musicality layer on the master bus - with a live performance panel to ride them.</p>
+        <h3 data-i18n="f12.h">MASTER FX RACK</h3>
+        <p data-i18n="f12.p">A lush FDN reverb, tempo-synced delay and a musicality layer on the master bus - with a live performance panel to ride them.</p>
       </div>
       <div class="card">
-        <h3>STUDIO-QUALITY EXPORT</h3>
-        <p>Render your set to WAV, AIFF, FLAC, MP3 or AAC - at the right tempo and key, with full metadata. A faithful recording of exactly what you heard.</p>
+        <h3 data-i18n="f13.h">STUDIO-QUALITY EXPORT</h3>
+        <p data-i18n="f13.p">Render your set to WAV, AIFF, FLAC, MP3 or AAC - at the right tempo and key, with full metadata. A faithful recording of exactly what you heard.</p>
       </div>
       <div class="card">
-        <h3>MIDI CONTROLLER MAPPING</h3>
-        <p>Table-driven MIDI Learn with per-device profiles. Works out of the box with the Traktor Kontrol S2; map any controller - Traktor S4, Pioneer DDJ-FLX and more.</p>
+        <h3 data-i18n="f14.h">MIDI CONTROLLER MAPPING</h3>
+        <p data-i18n="f14.p">Table-driven MIDI Learn with per-device profiles. Works out of the box with the Traktor Kontrol S2; map any controller - Traktor S4, Pioneer DDJ-FLX and more.</p>
       </div>
     </div>
   </section>
@@ -271,8 +278,8 @@
        LS account is live; the rest of the layout stays. -->
   <section id="pricing" class="pricing-section">
     <div class="section-head">
-      <h2>PRICING</h2>
-      <p>One-time purchase. No subscription. All v1.x updates free.</p>
+      <h2 data-i18n="pricing.h2">PRICING</h2>
+      <p data-i18n="pricing.p">One-time purchase. No subscription. All v1.x updates free.</p>
     </div>
 
     <div class="pricing-card">
@@ -282,7 +289,7 @@
         <span class="pc-price">$69</span>
         <span class="pc-currency">USD</span>
       </div>
-      <p class="pc-context">
+      <p class="pc-context" data-i18n="pc.context">
         <span class="pc-launch-tag">LAUNCH PRICE</span><br>
         Standard $129 after the first month
       </p>
@@ -294,37 +301,37 @@
           <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M3 8 L6.5 11.5 L13 5"/>
           </svg>
-          One-time purchase
+          <span data-i18n="pc.f0">One-time purchase</span>
         </li>
         <li>
           <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M3 8 L6.5 11.5 L13 5"/>
           </svg>
-          No subscription
+          <span data-i18n="pc.f1">No subscription</span>
         </li>
         <li>
           <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M3 8 L6.5 11.5 L13 5"/>
           </svg>
-          All v1.x updates free
+          <span data-i18n="pc.f2">All v1.x updates free</span>
         </li>
         <li>
           <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M3 8 L6.5 11.5 L13 5"/>
           </svg>
-          30-day full-featured trial
+          <span data-i18n="pc.f3">30-day full-featured trial</span>
         </li>
         <li>
           <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M3 8 L6.5 11.5 L13 5"/>
           </svg>
-          Windows 10 / 11 + macOS
+          <span data-i18n="pc.f4">Windows 10 / 11 + macOS</span>
         </li>
         <li>
           <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M3 8 L6.5 11.5 L13 5"/>
           </svg>
-          MIDI controller mapping
+          <span data-i18n="pc.f5">MIDI controller mapping</span>
         </li>
       </ul>
 
@@ -335,21 +342,21 @@
            data-mail-email="contact@21stcenturyartisan.com"
            data-mail-subject="GUR - notify me at launch"
            data-mail-body="Please let me know when GUR is available to purchase.">
-          GET LAUNCH NOTIFICATION
+          <span data-i18n="pc.notify">GET LAUNCH NOTIFICATION</span>
         </a>
         <a class="gur-btn gur-btn--ghost gur-btn--lg" href="#try">
-          TRY THE DEMO
+          <span data-i18n="pc.try">TRY THE DEMO</span>
         </a>
       </div>
 
-      <p class="pc-status"><span class="pc-status-dot" aria-hidden="true"></span>Launching September 9, 2026 · Windows &amp; macOS</p>
+      <p class="pc-status"><span class="pc-status-dot" aria-hidden="true"></span><span data-i18n="pc.status">Launching September 9, 2026 · Windows &amp; macOS</span></p>
     </div>
   </section>
 
   <!-- PLATFORMS -->
   <section class="platforms-section">
     <div class="section-head">
-      <h2>PLATFORMS</h2>
+      <h2 data-i18n="platforms.h2">PLATFORMS</h2>
     </div>
     <div class="platforms-row">
       <span class="platform live">WINDOWS 10 / 11</span>
@@ -361,11 +368,11 @@
   <section id="about" class="about-section">
     <div class="about-inner">
       <h2>21ST CENTURY ARTISAN</h2>
-      <p class="about-statement">
+      <p class="about-statement" data-i18n="about.statement">
         We build machines for the stage. Virtual and physical. Standalone, low-latency,
         tuned for live use. GUR is our debut.
       </p>
-      <p class="about-credit">
+      <p class="about-credit" data-i18n="about.credit">
         Built by <strong>Nadav Hecht Drayson</strong>
       </p>
       <a class="contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@21stcenturyartisan.com" target="_blank" rel="noopener"
@@ -380,9 +387,9 @@
        begin the built-in 30-day trial. No checkout or license key is needed. -->
   <section id="beta" class="beta-section">
     <div class="beta-card">
-      <div class="beta-eyebrow">EARLY ACCESS · BEFORE SEPTEMBER 9</div>
-      <h2 class="beta-title">BECOME A BETA TESTER</h2>
-      <p class="beta-lede">
+      <div class="beta-eyebrow" data-i18n="beta.eyebrow">EARLY ACCESS · BEFORE SEPTEMBER 9</div>
+      <h2 class="beta-title" data-i18n="beta.title">BECOME A BETA TESTER</h2>
+      <p class="beta-lede" data-i18n="beta.lede">
         Beta testing is <strong>free</strong>. Apply before the September 9 launch,
         download GUR directly, and explore the complete instrument on your own rig.
       </p>
@@ -392,15 +399,15 @@
            that jumped straight to checkout, so every applicant answers the
            qualifying questions before access is granted. -->
       <div class="beta-cta">
-        <a class="gur-btn gur-btn--primary gur-btn--lg" href="beta-intake.html">APPLY FOR BETA ACCESS</a>
+        <a class="gur-btn gur-btn--primary gur-btn--lg" href="beta-intake.html" data-i18n="beta.cta">APPLY FOR BETA ACCESS</a>
       </div>
-      <p class="beta-trial">
+      <p class="beta-trial" data-i18n="beta.trial">
         <strong>Start immediately</strong> - after the short application, download
         the current Windows or macOS build directly from this site. Your
         full-featured 30-day trial begins automatically when you first open GUR.
         No coupon, checkout, or serial key required.
       </p>
-      <p class="beta-note">Direct Windows 10 / 11 and macOS download · 30-day trial</p>
+      <p class="beta-note" data-i18n="beta.note">Direct Windows 10 / 11 and macOS download · 30-day trial</p>
     </div>
   </section>
 
@@ -409,7 +416,7 @@
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <span>&copy; 2026 21st Century Artisan &middot; <a href="privacy.html">Privacy</a></span>
+    <span data-i18n="footer.copy">&copy; 2026 21st Century Artisan &middot; <a href="privacy.html">Privacy</a></span>
     <ul class="footer-socials">
       <li>
         <a href="https://www.instagram.com/21stcenturyartisan/" target="_blank" rel="noopener" aria-label="Instagram">
@@ -424,6 +431,7 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260705"></script>
+<script src="js/i18n.js?v=20260903a"></script>
+<script src="js/main.js?v=20260903a"></script>
 </body>
 </html>

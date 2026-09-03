@@ -1163,3 +1163,316 @@ h2, h3 {
   letter-spacing: 0.06em;
   color: var(--muted);
 }
+
+/* ============================================================
+   LANGUAGE SWITCH (EN / עב) - header pill, two segments. The active
+   segment fills with the accent; js/i18n.js toggles .is-active.
+   ============================================================ */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px;
+  background: rgba(255,255,255,0.02);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset;
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-family: 'Bebas Neue', 'Heebo', sans-serif;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  line-height: 1;
+  padding: 7px 11px 6px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background var(--btn-trans), color var(--btn-trans);
+}
+.lang-switch button[lang="he"] { letter-spacing: 0; font-family: 'Heebo', 'Bebas Neue', sans-serif; font-weight: 700; padding-top: 6px; }
+.lang-switch button:hover { color: var(--text); }
+.lang-switch button.is-active {
+  background: linear-gradient(180deg, var(--accent) 0%, #4ec0bd 100%);
+  color: #08090a;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.22) inset, 0 -1px 0 rgba(0,0,0,0.25) inset;
+}
+.lang-switch button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.header-link.is-current { color: var(--accent); }
+@media (max-width: 640px) {
+  /* Five links + the language pill + Instagram no longer fit on one phone
+     row; let the header wrap (brand on its own line, nav below) so the
+     page never grows wider than the viewport. */
+  .site-header { flex-wrap: wrap; gap: 10px 0; justify-content: center; }
+  .header-nav  { flex-wrap: wrap; justify-content: center; gap: 12px 16px; width: 100%; }
+  .lang-switch button { font-size: 12px; padding: 6px 9px 5px; }
+}
+
+/* ============================================================
+   RTL / HEBREW. Bebas Neue and Inter have no Hebrew glyphs, so the
+   whole type system swaps to Heebo (body) + Secular One (display) and
+   the letter-spacing that gives the English caps their look is dropped
+   (tracking on Hebrew reads as broken words). Digits-only elements keep
+   Bebas Neue. Only the handful of physical-side rules are mirrored;
+   flex/grid mirror on their own under dir="rtl".
+   ============================================================ */
+[dir="rtl"] body,
+[dir="rtl"] .beta-input,
+[dir="rtl"] .mc-opt {
+  font-family: 'Heebo', 'Inter', -apple-system, 'Segoe UI', sans-serif;
+}
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3,
+[dir="rtl"] .brand-name,
+[dir="rtl"] .hero-tagline,
+[dir="rtl"] .cd-eyebrow, [dir="rtl"] .cd-date, [dir="rtl"] .cd-lbl, [dir="rtl"] .cd-done,
+[dir="rtl"] .gur-btn, [dir="rtl"] .fs-btn, [dir="rtl"] .badge,
+[dir="rtl"] .pc-eyebrow, [dir="rtl"] .pc-launch-tag,
+[dir="rtl"] .shot figcaption, [dir="rtl"] .lb-stage figcaption,
+[dir="rtl"] .platforms-row,
+[dir="rtl"] .beta-eyebrow, [dir="rtl"] .beta-title,
+[dir="rtl"] .sb-lead, [dir="rtl"] .sb-label,
+[dir="rtl"] .ac-eyebrow, [dir="rtl"] .ac-title, [dir="rtl"] .ac-topics li {
+  font-family: 'Secular One', 'Heebo', sans-serif;
+  letter-spacing: 0;
+}
+[dir="rtl"] .brand-name { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.14em; } /* Latin brand */
+[dir="rtl"] .hero-tagline { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.22em; }
+[dir="rtl"] .pc-eyebrow   { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.32em; }
+[dir="rtl"] .about-inner h2 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.16em; }
+[dir="rtl"] .ac-eyebrow { font-size: 15px; }
+[dir="rtl"] .gur-btn { font-size: 15px; font-weight: 400; }
+[dir="rtl"] .gur-btn--lg { font-size: 16px; }
+[dir="rtl"] .fs-btn { font-size: 14px; }
+[dir="rtl"] .card h3 { font-size: 17px; }
+[dir="rtl"] .section-head h2, [dir="rtl"] .ac-text h2, [dir="rtl"] .ac-manifesto h2 { font-size: 26px; }
+[dir="rtl"] .beta-title { font-size: clamp(30px, 4.6vw, 44px); }
+[dir="rtl"] .ac-title { font-size: clamp(30px, 5vw, 56px); line-height: 1.2; }
+[dir="rtl"] .cd-lbl, [dir="rtl"] .cd-eyebrow { font-size: 13px; }
+[dir="rtl"] .cd-clock, [dir="rtl"] .cd-num, [dir="rtl"] .pc-price-row, [dir="rtl"] .sb-num { direction: ltr; }
+[dir="rtl"] .pc-status-dot { margin-right: 0; margin-left: 10px; }
+[dir="rtl"] .sb-tile + .sb-tile { border-left: none; border-right: 1px solid var(--line); }
+@media (max-width: 620px) {
+  [dir="rtl"] .sb-tile + .sb-tile { border-right: none; border-top: 1px solid var(--line); }
+}
+[dir="rtl"] .mc-opt { text-align: right; }
+[dir="rtl"] .mc-close { right: auto; left: 12px; }
+[dir="rtl"] .about-credit, [dir="rtl"] .pc-context, [dir="rtl"] .try-note { letter-spacing: 0; }
+[dir="rtl"] .header-link { letter-spacing: 0; font-size: 15px; }
+[dir="rtl"] .footer-inner, [dir="rtl"] .pc-status, [dir="rtl"] .beta-note { letter-spacing: 0; }
+
+/* ============================================================
+   ACADEMY PAGE (academy.html). Built from the course flyer: a title
+   block, three icon-plus-text bands separated by hairlines (who / how it
+   connects / what you will learn), the manifesto, then a contact card
+   that reuses the beta-card faceplate.
+   ============================================================ */
+.ac-hero {
+  max-width: var(--maxw);
+  margin: 24px auto 10px;
+  padding: 50px var(--gutter) 10px;
+  text-align: center;
+}
+.ac-eyebrow {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.34em;
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.ac-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: clamp(34px, 5.6vw, 64px);
+  letter-spacing: 0.06em;
+  line-height: 1.02;
+  margin: 0 auto 22px;
+  max-width: 900px;
+  color: var(--text);
+  text-shadow: 0 0 30px rgba(99,215,212,0.12);
+}
+.ac-lede {
+  max-width: 640px;
+  margin: 0 auto 32px;
+  font-size: clamp(16px, 1.8vw, 18px);
+  color: var(--muted);
+  line-height: 1.65;
+}
+.ac-wave {
+  display: block;
+  width: min(100%, 900px);
+  height: 60px;
+  margin: 46px auto 0;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  opacity: 0.75;
+}
+
+.ac-block {
+  padding: 40px var(--gutter);
+  border-top: 1px solid var(--line);
+}
+.ac-block:first-of-type { border-top: 0; }
+.ac-block-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+.ac-block--alt .ac-block-inner { grid-template-columns: 1fr 380px; }
+.ac-block--wide .ac-block-inner { grid-template-columns: 420px 1fr; }
+.ac-text h2 {
+  color: var(--text);
+  font-size: clamp(26px, 3.4vw, 40px);
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+.ac-text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+
+/* Line-art icons in the accent colour, strung together with dotted
+   connectors - the chain motif from the flyer. */
+.ac-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+.ac-icons--col { flex-direction: column; gap: 6px; }
+.ac-icons--row { flex-direction: row;    gap: 4px; }
+.ac-ico {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(99,215,212,0.25));
+}
+.ac-link {
+  flex: 0 0 auto;
+  opacity: 0.55;
+}
+.ac-icons--col .ac-link { width: 0; height: 18px; border-left: 1.5px dotted var(--accent); }
+.ac-icons--row .ac-link { height: 0; width: 18px; border-top: 1.5px dotted var(--accent); }
+
+.ac-topics {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ac-topics li {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.14em;
+  font-size: 13px;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  background: rgba(99,215,212,0.05);
+  border-radius: 999px;
+  padding: 7px 14px 6px;
+  line-height: 1;
+}
+
+.ac-manifesto {
+  padding: 30px var(--gutter) 40px;
+  border-top: 1px solid var(--line);
+}
+.ac-manifesto-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: clamp(32px, 4vw, 48px) clamp(24px, 4vw, 48px);
+  text-align: center;
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(99,215,212,0.07) 0%, transparent 62%),
+    linear-gradient(180deg, rgba(20,24,27,0.85) 0%, rgba(14,17,20,0.92) 100%);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 24px 60px -42px rgba(0,0,0,0.7);
+  position: relative;
+  overflow: hidden;
+}
+.ac-manifesto-inner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 22%; right: 22%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent) 50%, transparent);
+  opacity: 0.5;
+}
+.ac-manifesto h2 {
+  color: var(--accent);
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.ac-manifesto p {
+  margin: 0 0 18px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.75;
+}
+.ac-manifesto p:last-child { margin-bottom: 0; }
+.ac-manifesto .ac-fit {
+  color: var(--muted);
+  font-size: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.ac-contact-cta { gap: 12px; }
+.ac-contact-cta .gur-btn { min-width: 0; }
+.ac-phone { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.ac-phone a { color: var(--accent); font-weight: 600; letter-spacing: 0.04em; }
+.ac-demo-link {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.18em;
+  font-size: 13px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-dim);
+  padding-bottom: 2px;
+}
+[dir="rtl"] .ac-demo-link { font-family: 'Secular One', 'Heebo', sans-serif; letter-spacing: 0; font-size: 14px; }
+.ac-demo-link:hover { border-color: var(--accent); color: var(--text); }
+.ac-flyer { margin-top: 14px; }
+.ac-flyer a { color: var(--muted); border-bottom: 1px solid var(--line); }
+.ac-flyer a:hover { color: var(--accent); border-color: var(--accent-dim); }
+.ac-sep { margin: 0 6px; color: var(--line); }
+
+@media (max-width: 900px) {
+  .ac-block-inner,
+  .ac-block--alt .ac-block-inner,
+  .ac-block--wide .ac-block-inner { grid-template-columns: 1fr; gap: 26px; }
+  /* Icons go above the text on narrow screens, and the vertical chain lies down. */
+  .ac-icons { order: -1; }
+  .ac-icons--col { flex-direction: row; gap: 4px; }
+  .ac-icons--col .ac-link { width: 18px; height: 0; border-left: 0; border-top: 1.5px dotted var(--accent); }
+  .ac-text { text-align: center; }
+  .ac-topics { justify-content: center; }
+  .ac-ico { width: 54px; height: 54px; }
+}
+@media (max-width: 560px) {
+  .ac-hero { padding: 28px var(--gutter) 6px; margin-top: 8px; }
+  .ac-title { font-size: clamp(30px, 9vw, 40px); }
+  .ac-lede { font-size: 15px; }
+  .ac-wave { margin-top: 30px; height: 44px; }
+  .ac-block { padding: 30px var(--gutter); }
+  .ac-text h2 { font-size: 26px; }
+  .ac-text p { font-size: 15px; }
+  .ac-ico { width: 44px; height: 44px; }
+  .ac-icons--row .ac-link, .ac-icons--col .ac-link { width: 10px; }
+  .ac-manifesto p { font-size: 15px; }
+  .ac-contact-cta { flex-direction: column; width: 100%; }
+  .ac-contact-cta .gur-btn { width: 100%; }
+}

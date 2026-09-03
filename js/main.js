@@ -30,6 +30,8 @@ function initMailChooser() {
 
   let lastTrigger = null;
   let copyTimer = null;
+  // Label text lives in data-label so js/i18n.js can translate it.
+  const copyLabel = () => optCopy.dataset.label || 'Copy email address';
   const enc = s => encodeURIComponent(s || '');
 
   function open(email, subject, body, trigger) {
@@ -48,7 +50,7 @@ function initMailChooser() {
     optDefault.href = mt;
 
     optCopy.dataset.email = email;
-    optCopy.textContent = 'Copy email address';
+    optCopy.textContent = copyLabel();
     optCopy.classList.remove('is-copied');
 
     modal.hidden = false;
@@ -95,11 +97,11 @@ function initMailChooser() {
         document.body.removeChild(ta);
       }
     } catch (err) { ok = false; }
-    optCopy.textContent = ok ? 'Copied!' : email;
+    optCopy.textContent = ok ? (optCopy.dataset.copied || 'Copied!') : email;
     optCopy.classList.toggle('is-copied', ok);
     if (copyTimer) clearTimeout(copyTimer);
     copyTimer = setTimeout(() => {
-      optCopy.textContent = 'Copy email address';
+      optCopy.textContent = copyLabel();
       optCopy.classList.remove('is-copied');
     }, 1600);
   });
