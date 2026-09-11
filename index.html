@@ -55,17 +55,17 @@
       drum and percussion engines, four decks, live throw FX, and a sample-accurate
       sequencer in one app.
     </p>
-    <!-- Clean dual CTA: primary action is the in-browser demo (visitor can
-         hear it in 10 seconds), secondary anchors to the pricing section. -->
+    <!-- LAUNCH CTA: buy outright, or start the 30-day trial. The browser demo
+         drops to a tertiary text link - it is still the fastest way to hear the
+         thing, but at launch the money path leads. -->
     <div class="hero-cta">
-      <a class="gur-btn gur-btn--primary" href="#try">
-        <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true">
-          <path d="M3 2 L13 8 L3 14 Z"/>
-        </svg>
-        <span data-i18n="hero.try">TRY THE DEMO</span>
-      </a>
-      <a class="gur-btn gur-btn--ghost" href="#pricing" data-i18n="hero.pricing">SEE PRICING</a>
+      <a class="gur-btn gur-btn--primary" href="https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/61d40824-72fb-4e00-8f80-0bd035252667" data-i18n="hero.buy">BUY NOW - $69.99</a>
+      <a class="gur-btn gur-btn--ghost" href="download.html" data-i18n="hero.trial">TRY IT FIRST - 30 DAYS FREE</a>
     </div>
+    <p class="hero-price-note">
+      <span data-i18n="hero.pricenote">$129.99 from January 1. Buy during your 30-day trial and the 3 classic synths are yours free.</span><br>
+      <a class="hero-demo-link" href="#try" data-i18n="hero.demolink">or hear it in your browser first</a>
+    </p>
   </section>
 
   <!-- COUNTDOWN - launch clock to 9 Sep 2026. JS in main.js fills the digits
@@ -282,75 +282,104 @@
       <p data-i18n="pricing.p">One-time purchase. No subscription. All v1.x updates free.</p>
     </div>
 
-    <div class="pricing-card">
-      <div class="pc-eyebrow">GUR - DJ LIVE SEQUENCER</div>
+    <div class="pricing-grid">
 
-      <div class="pc-price-row">
-        <span class="pc-price">$69</span>
-        <span class="pc-currency">USD</span>
-      </div>
-      <p class="pc-context" data-i18n="pc.context">
-        <span class="pc-launch-tag">LAUNCH PRICE</span><br>
-        Standard $129 after the first month
-      </p>
+      <div class="pricing-card pricing-card--pro">
+        <div class="pc-eyebrow" data-i18n="pc.eyebrow">GUR PRO - THE FULL INSTRUMENT</div>
 
-      <div class="pc-divider"></div>
+        <div class="pc-price-row">
+          <span class="pc-price">$69.99</span>
+          <span class="pc-currency">USD</span>
+        </div>
+        <p class="pc-context" data-i18n="pc.context">
+          <span class="pc-launch-tag">LAUNCH PRICE</span><br>
+          $129.99 from January 1
+        </p>
+        <p class="pc-bonus-wrap"><span class="pc-bonus" data-i18n="pc.bonus">Buy within your trial: the 3 classic synths free</span></p>
 
-      <ul class="pc-features">
-        <li>
-          <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 8 L6.5 11.5 L13 5"/>
-          </svg>
-          <span data-i18n="pc.f0">One-time purchase</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 8 L6.5 11.5 L13 5"/>
-          </svg>
-          <span data-i18n="pc.f1">No subscription</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 8 L6.5 11.5 L13 5"/>
-          </svg>
-          <span data-i18n="pc.f2">All v1.x updates free</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 8 L6.5 11.5 L13 5"/>
-          </svg>
-          <span data-i18n="pc.f3">30-day full-featured trial</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 8 L6.5 11.5 L13 5"/>
-          </svg>
-          <span data-i18n="pc.f4">Windows 10 / 11 + macOS</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 8 L6.5 11.5 L13 5"/>
-          </svg>
-          <span data-i18n="pc.f5">MIDI controller mapping</span>
-        </li>
-      </ul>
+        <div class="pc-divider"></div>
 
-      <div class="pc-cta-row">
-        <!-- JS intercepts the click and shows the in-page mail chooser (initMailChooser).
-             The Gmail href stays as the no-JS fallback. -->
-        <a class="gur-btn gur-btn--primary gur-btn--lg" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@21stcenturyartisan.com&amp;su=GUR%20%E2%80%94%20notify%20me%20at%20launch&amp;body=Please%20let%20me%20know%20when%20GUR%20is%20available%20to%20purchase." target="_blank" rel="noopener"
-           data-mail-email="contact@21stcenturyartisan.com"
-           data-mail-subject="GUR - notify me at launch"
-           data-mail-body="Please let me know when GUR is available to purchase.">
-          <span data-i18n="pc.notify">GET LAUNCH NOTIFICATION</span>
-        </a>
-        <a class="gur-btn gur-btn--ghost gur-btn--lg" href="#try">
-          <span data-i18n="pc.try">TRY THE DEMO</span>
-        </a>
+        <ul class="pc-features">
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pc.f0">Full standalone including DJ mode</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pc.f1">Four decks, track decks and stems</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pc.f2">VST3 plugin included</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pc.f3">All v1.x updates free</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pc.f4">30-day full-featured trial</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pc.f5">Windows 10 / 11 + macOS</span>
+          </li>
+        </ul>
+
+        <div class="pc-cta-row">
+          <a class="gur-btn gur-btn--primary gur-btn--lg" href="https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/61d40824-72fb-4e00-8f80-0bd035252667" data-i18n="pc.buy">BUY GUR PRO - $69.99</a>
+        </div>
       </div>
 
-      <p class="pc-status"><span class="pc-status-dot" aria-hidden="true"></span><span data-i18n="pc.status">Launching September 9, 2026 · Windows &amp; macOS</span></p>
+      <div class="pricing-card pricing-card--lite">
+        <div class="pc-eyebrow" data-i18n="pcl.eyebrow">GUR LITE - LIVE MODE</div>
+
+        <div class="pc-price-row">
+          <span class="pc-price">$39.99</span>
+          <span class="pc-currency">USD</span>
+        </div>
+        <p class="pc-context" data-i18n="pcl.context">
+          <span class="pc-launch-tag">LAUNCH PRICE</span><br>
+          $69.99 from January 1
+        </p>
+
+        <div class="pc-divider"></div>
+
+        <ul class="pc-features">
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pcl.f0">Live Mode standalone</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pcl.f1">VST3 plugin included</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pcl.f2">Sequencer, drums, synths and FX</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pcl.f3">All v1.x updates free</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pcl.f4">30-day full-featured trial</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pcl.f5">No DJ mode or decks</span>
+          </li>
+        </ul>
+
+        <div class="pc-cta-row">
+          <a class="gur-btn gur-btn--ghost gur-btn--lg" href="https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/0a42bf99-dec4-4a9e-9a64-d6d6895b7684" data-i18n="pcl.buy">BUY GUR LITE - $39.99</a>
+        </div>
+      </div>
+
     </div>
+
+    <p class="pc-status"><span class="pc-status-dot" aria-hidden="true"></span><span data-i18n="pc.status">Available now · Windows &amp; macOS</span></p>
   </section>
 
   <!-- PLATFORMS -->

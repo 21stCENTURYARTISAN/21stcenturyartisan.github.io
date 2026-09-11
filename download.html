@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GUR - Start your free trial</title>
+<style>
+  :root{
+    --bg:#0a0c0e;
+    --panel:#12161a;
+    --panel-2:#171c22;
+    --line:#242c34;
+    --text:#e8eef2;
+    --muted:#8a97a3;
+    --accent:#63d7d4;
+    --accent-dim:#2f6f6d;
+    --danger:#ff5d5d;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:radial-gradient(1200px 600px at 50% -10%, #101f22 0%, var(--bg) 60%) fixed;
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:32px 16px 80px;
+  }
+  .wrap{max-width:640px;margin:0 auto}
+  .brand{
+    display:flex;align-items:center;gap:12px;margin-bottom:8px;
+    letter-spacing:.28em;font-weight:800;font-size:20px;
+  }
+  .brand .dot{width:12px;height:12px;border-radius:3px;background:var(--accent);box-shadow:0 0 16px var(--accent)}
+  h1{font-size:26px;margin:18px 0 6px;line-height:1.2}
+  .sub{color:var(--muted);margin:0 0 26px;font-size:15px}
+  form{display:flex;flex-direction:column;gap:18px}
+  .card{
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 18px 20px;
+  }
+  .card h2{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);margin:0 0 14px}
+  label{display:block;font-size:14px;font-weight:600;margin:0 0 7px}
+  .hint{font-size:12.5px;color:var(--muted);font-weight:400;margin-top:-2px;margin-bottom:8px}
+  .req{color:var(--accent)}
+  input[type=text],input[type=email],textarea,select{
+    width:100%;background:#0c1013;border:1px solid var(--line);color:var(--text);
+    border-radius:10px;padding:12px 13px;font-size:15px;font-family:inherit;outline:none;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  textarea{min-height:84px;resize:vertical}
+  input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(99,215,212,.14)}
+  .field{margin-bottom:16px}
+  .field:last-child{margin-bottom:0}
+  .opts{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+  .opts.row{flex-direction:row;flex-wrap:wrap;gap:10px}
+  .opt{
+    display:flex;align-items:center;gap:10px;background:#0c1013;border:1px solid var(--line);
+    border-radius:10px;padding:11px 13px;cursor:pointer;font-size:14.5px;transition:border-color .15s,background .15s;
+  }
+  .opt:hover{border-color:var(--accent-dim)}
+  .opts.row .opt{flex:1 1 auto}
+  .opt input{accent-color:var(--accent);width:17px;height:17px;margin:0}
+  .note{
+    font-size:12.5px;color:var(--muted);background:rgba(99,215,212,.06);
+    border:1px solid var(--accent-dim);border-radius:10px;padding:10px 12px;margin-top:8px;
+  }
+  button{
+    background:var(--accent);color:#04211f;border:none;border-radius:12px;
+    padding:15px 20px;font-size:16px;font-weight:800;letter-spacing:.04em;cursor:pointer;
+    box-shadow:0 6px 24px rgba(99,215,212,.25);transition:transform .08s, box-shadow .15s;
+  }
+  button:hover{box-shadow:0 8px 30px rgba(99,215,212,.4)}
+  button:active{transform:translateY(1px)}
+  .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:22px}
+  .hp{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>GUR</div>
+    <h1>Start your 30-day trial.</h1>
+    <p class="sub">Everything unlocked for 30 days. No card, no serial key. Just tell us where to send your download.</p>
+
+    <form action="https://formsubmit.co/contact@21stcenturyartisan.com" method="POST">
+      <input type="hidden" name="_subject" value="New GUR download">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://21stcenturyartisan.github.io/thanks.html">
+      <input type="hidden" name="Platform" id="platformField" value="Windows">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+
+      <div class="card">
+        <div class="field">
+          <label>Full name <span class="req">*</span></label>
+          <input type="text" name="Full name" required placeholder="First and last name">
+        </div>
+
+        <div class="field">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="email" required placeholder="you@email.com">
+        </div>
+
+        <div class="field">
+          <label>Country <span class="req">*</span></label>
+          <input type="text" name="Country" required placeholder="e.g. Israel, United States, Germany">
+        </div>
+
+        <div class="field">
+          <label>State / region</label>
+          <input type="text" name="State or region" placeholder="Optional - helps us see where GUR is being played">
+        </div>
+
+        <p class="note">
+          We use this to keep track of who is running GUR and to send you your download link.
+          No marketing lists, no sharing with anyone. See our
+          <a href="privacy.html" style="color:var(--accent)">privacy note</a>.
+        </p>
+      </div>
+
+      <button type="submit">GET MY FREE TRIAL</button>
+      <p class="foot">
+        Already decided? <a href="https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/61d40824-72fb-4e00-8f80-0bd035252667" style="color:var(--accent)">Buy GUR for $69.99</a>
+        - launch price, $129.99 from January 1.
+      </p>
+    </form>
+  </div>
+
+  <script>
+    // Record which build they are about to take, so the notification says so.
+    (function () {
+      var ua = navigator.userAgent || '';
+      var isMac = /Macintosh|Mac OS X/i.test(ua) && !/iPhone|iPod/i.test(ua);
+      var f = document.getElementById('platformField');
+      if (f) f.value = isMac ? 'macOS' : 'Windows';
+    }());
+  </script>
+</body>
+</html>
