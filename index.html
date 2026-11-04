@@ -3,18 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="title.index">GUR - DJ Live Sequencer · 21st Century Artisan</title>
-  <meta name="description" content="GUR is a standalone DJ Live Sequencer for Windows and macOS with expandable live channels, four decks, piano roll automation, percussion, MIDI mapping and live FX.">
+  <title data-i18n="title.index">GUR - DJ Live Sequencer Workstation · 21st Century Artisan</title>
+  <meta name="description" content="GUR is a DJ Live Sequencer Workstation for Windows and macOS: 12 instruments, 8 live channels, four decks, stems, 13 insert FX, LiveFX and MIDI mapping for controllers from every major brand. Standalone or VST3.">
+  <link rel="canonical" href="https://www.21stcenturyartisan.com/">
   <meta name="theme-color" content="#0b0f15">
-  <meta property="og:title" content="GUR - DJ Live Sequencer">
-  <meta property="og:description" content="Expandable live channels, four decks, piano roll automation, percussion, MIDI mapping and live FX. By 21st Century Artisan.">
+  <meta property="og:title" content="GUR - DJ Live Sequencer Workstation">
+  <meta property="og:description" content="12 instruments, 8 live channels, four decks, stems, insert FX, LiveFX and MIDI mapping. Standalone or VST3. By 21st Century Artisan.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.21stcenturyartisan.com/">
+  <meta property="og:image" content="https://www.21stcenturyartisan.com/images/gur-live.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260903a">
+  <link rel="stylesheet" href="css/style.css?v=20261105a">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "GUR",
+    "alternateName": "GUR - DJ Live Sequencer Workstation",
+    "url": "https://www.21stcenturyartisan.com/",
+    "image": "https://www.21stcenturyartisan.com/images/gur-live.png",
+    "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "DJ and live performance software",
+    "operatingSystem": "Windows 10, Windows 11, macOS",
+    "softwareVersion": "1.0.212",
+    "description": "A desktop DJ Live Sequencer Workstation with 12 instrument engines, 8 live channels, four decks, stem separation, 13 mixer insert effects, LiveFX performance effects and MIDI mapping. Runs standalone or as a VST3.",
+    "featureList": [
+      "Polymetric 32-step sequencer with sample-accurate timing",
+      "256-bar piano roll with automation",
+      "12 instrument engines",
+      "Four decks for sequencer patterns or audio tracks",
+      "Offline 4-stem separation",
+      "PRO MIXER with 8 insert slots per channel and 13 native insert effects",
+      "LiveFX beat-synced performance effects",
+      "Library import from Traktor, Rekordbox and VirtualDJ",
+      "MIDI Learn with per-device profiles",
+      "VST3 plugin included"
+    ],
+    "author": { "@type": "Person", "name": "Nadav Hecht Drayson" },
+    "publisher": { "@type": "Organization", "name": "21st Century Artisan", "url": "https://www.21stcenturyartisan.com/" },
+    "offers": [
+      { "@type": "Offer", "name": "GUR DJ", "price": "69.99", "priceCurrency": "USD", "priceValidUntil": "2026-12-31", "availability": "https://schema.org/InStock", "url": "https://www.21stcenturyartisan.com/#pricing" },
+      { "@type": "Offer", "name": "GUR LITE", "price": "39.99", "priceCurrency": "USD", "priceValidUntil": "2026-12-31", "availability": "https://schema.org/InStock", "url": "https://www.21stcenturyartisan.com/#pricing" }
+    ]
+  }
+  </script>
 </head>
 <body data-page="index">
 
@@ -27,6 +63,8 @@
   <nav class="header-nav">
     <a href="#try"      class="header-link" data-i18n="nav.try">Try It</a>
     <a href="#inside"   class="header-link" data-i18n="nav.inside">Inside</a>
+    <a href="#fx"       class="header-link" data-i18n="nav.fx">FX</a>
+    <a href="#roadmap"  class="header-link" data-i18n="nav.roadmap">Roadmap</a>
     <a href="#pricing"  class="header-link" data-i18n="nav.pricing">Pricing</a>
     <a href="academy.html" class="header-link" data-i18n="nav.academy">Academy</a>
     <a href="#about"    class="header-link" data-i18n="nav.about">About</a>
@@ -49,11 +87,11 @@
   <!-- HERO -->
   <section class="hero">
     <img src="images/gur_logo.png" alt="GUR" class="hero-logo">
-    <div class="hero-tagline">DJ LIVE SEQUENCER</div>
+    <h1 class="hero-tagline">DJ LIVE SEQUENCER WORKSTATION</h1>
     <p class="hero-lede" data-i18n="hero.lede">
-      A standalone instrument for live performance - expandable live channels,
-      drum and percussion engines, four decks, live throw FX, and a sample-accurate
-      sequencer in one app.
+      A complete instrument for live performance - 12 instruments, 8 live channels,
+      four decks, insert FX, LiveFX and a sample-accurate sequencer. Standalone, or as
+      a VST3 inside your DAW.
     </p>
     <!-- LAUNCH CTA: buy outright, or start the 30-day trial. The browser demo
          drops to a tertiary text link - it is still the fastest way to hear the
@@ -68,25 +106,6 @@
     </p>
   </section>
 
-  <!-- COUNTDOWN - launch clock to 9 Sep 2026. JS in main.js fills the digits
-       and ticks once per second; if the date passes it flips to a LAUNCHED state. -->
-  <section class="countdown-section" aria-label="Launch countdown">
-    <div class="countdown-card" id="countdown" data-launch="2026-09-09T00:00:00">
-      <div class="cd-eyebrow" data-i18n="cd.eyebrow">LAUNCHING</div>
-      <div class="cd-date" data-i18n="cd.date">SEPTEMBER 9, 2026</div>
-      <div class="cd-clock" id="cdClock" role="timer" aria-live="off">
-        <div class="cd-unit"><span class="cd-num" id="cdDays">--</span><span class="cd-lbl" data-i18n="cd.days">DAYS</span></div>
-        <div class="cd-sep">:</div>
-        <div class="cd-unit"><span class="cd-num" id="cdHours">--</span><span class="cd-lbl" data-i18n="cd.hrs">HRS</span></div>
-        <div class="cd-sep">:</div>
-        <div class="cd-unit"><span class="cd-num" id="cdMins">--</span><span class="cd-lbl" data-i18n="cd.min">MIN</span></div>
-        <div class="cd-sep">:</div>
-        <div class="cd-unit"><span class="cd-num" id="cdSecs">--</span><span class="cd-lbl" data-i18n="cd.sec">SEC</span></div>
-      </div>
-      <div class="cd-done" id="cdDone" data-i18n="cd.done" hidden>IT'S LIVE - GUR IS OUT NOW</div>
-    </div>
-  </section>
-
   <!-- SCREENSHOTS - teaser of the native JUCE app -->
   <section id="shots" class="shots-section">
     <div class="section-head">
@@ -95,12 +114,12 @@
     </div>
     <div class="shots-grid">
       <figure class="shot" data-lightbox="0" tabindex="0" role="button" aria-label="Open larger view of LIVE mode screenshot">
-        <img src="images/gur-live.png" alt="GUR live mode - mixer and expandable live sequencer" loading="lazy">
-        <figcaption data-i18n="shots.c0">LIVE MODE - 6-channel default, expandable to 8</figcaption>
+        <img src="images/gur-live.png" alt="GUR live mode - mixer and live sequencer" loading="lazy">
+        <figcaption data-i18n="shots.c0">LIVE MODE - the mixer and sequencer</figcaption>
       </figure>
-      <figure class="shot" data-lightbox="1" tabindex="0" role="button" aria-label="Open larger view of master FX and performance panel screenshot">
-        <img src="images/gur-master-fx.png" alt="GUR master dynamics, channel FX engines and performance panel" loading="lazy">
-        <figcaption data-i18n="shots.c1">MASTER FX - dynamics, channel FX engines + performance panel</figcaption>
+      <figure class="shot" data-lightbox="1" tabindex="0" role="button" aria-label="Open larger view of LiveFX and performance panel screenshot">
+        <img src="images/gur-master-fx.png" alt="GUR master dynamics, channel FX engines and LiveFX performance panel" loading="lazy">
+        <figcaption data-i18n="shots.c1">LIVEFX + MASTER - dynamics, channel FX engines + performance panel</figcaption>
       </figure>
       <figure class="shot" data-lightbox="2" tabindex="0" role="button" aria-label="Open larger view of MIDI mapping screenshot">
         <img src="images/gur-midi-map.png" alt="GUR MIDI mapping dialog with per-device controller profiles" loading="lazy">
@@ -178,14 +197,14 @@
         <span data-i18n="try.fs">OPEN FULLSCREEN</span>
       </button>
     </div>
-    <p class="try-note" data-i18n="try.note">Press PLAY inside the frame to start audio. Best in Chrome / Edge / Firefox on desktop. The full native app (low-latency, ASIO, MIDI) launches when it's ready.</p>
+    <p class="try-note" data-i18n="try.note">Press PLAY inside the frame to start audio. Best in Chrome / Edge / Firefox on desktop. The full native app adds low latency, ASIO and MIDI.</p>
   </section>
 
   <!-- FEATURE GRID -->
   <section id="inside" class="features-section">
     <div class="section-head">
       <h2 data-i18n="inside.h2">WHAT'S INSIDE</h2>
-      <p data-i18n="inside.p">One app. No DAW. No host. No plugins.</p>
+      <p data-i18n="inside.p">One instrument for the stage. Standalone on Windows and macOS, or as a VST3 inside your DAW.</p>
     </div>
 
     <!-- Instrument-count banner: 4 drum/percussion + 4 signature + 4 classic = 12 engines. -->
@@ -213,8 +232,8 @@
         <p data-i18n="f0.p">Every channel runs its own 32-step grid with an independent loop length - layer polymeters and patterns that drift in and out of phase. Per-step velocity, accent, modulation, global swing, and sample-accurate timing.</p>
       </div>
       <div class="card">
-        <h3 data-i18n="f1.h">OPTIONAL 8-CHANNEL LIVE MODE</h3>
-        <p data-i18n="f1.p">GUR still opens in the clean 6-channel Live Mode by default. Add CH7 and CH8 only when you need them, and the live rack reflows into the same performance area instead of opening a separate page.</p>
+        <h3 data-i18n="f1.h">EIGHT LIVE CHANNELS</h3>
+        <p data-i18n="f1.p">GUR opens with all eight channels ready. Any slot can host any engine, so the rack fits the set you are playing.</p>
       </div>
       <div class="card">
         <h3 data-i18n="f2.h">GLOBAL OR CHANNEL PATTERNS</h3>
@@ -226,11 +245,11 @@
       </div>
       <div class="card">
         <h3 data-i18n="f4.h">PERCUSSION SYNTH / SAMPLER</h3>
-        <p data-i18n="f4.p">A new flexible Percussion engine sits alongside Kick, Snare, Hats, Bass, Lead and the classics. Load it into any live channel slot, including the optional seventh and eighth channels.</p>
+        <p data-i18n="f4.p">A flexible Percussion engine sits alongside Kick, Snare, Hats, Bass, Lead and the classics. Load it into any live channel slot.</p>
       </div>
       <div class="card">
         <h3 data-i18n="f5.h">FOUR FLEXIBLE DECKS</h3>
-        <p data-i18n="f5.p">Four decks, each freely assignable - load a sequencer pattern or an audio track onto any of them. The full CDJ workflow, in software - no DAW, no host.</p>
+        <p data-i18n="f5.p">Four decks, each freely assignable - load a sequencer pattern or an audio track onto any of them. The full CDJ workflow, in software.</p>
       </div>
       <div class="card">
         <h3 data-i18n="f6.h">DJ LIBRARY &amp; IMPORT</h3>
@@ -242,7 +261,7 @@
       </div>
       <div class="card">
         <h3 data-i18n="f8.h">CDJ-GRADE LOOPS &amp; CUES</h3>
-        <p data-i18n="f8.p">Beat loops, manual loops and slip mode, plus 8 saved loops and 8 hot cues per deck - phase-locked to the sequencer with continuous beat-sync, and a direct route into the master FX rack.</p>
+        <p data-i18n="f8.p">Beat loops, manual loops and slip mode, plus 8 saved loops and 8 hot cues per deck - phase-locked to the sequencer with continuous beat-sync, and a direct route into LiveFX.</p>
       </div>
       <div class="card">
         <h3 data-i18n="f9.h">KEY-LOCK TIME-STRETCH</h3>
@@ -250,23 +269,99 @@
       </div>
       <div class="card">
         <h3 data-i18n="f10.h">STEM SEPARATION</h3>
-        <p data-i18n="f10.p">Offline 4-stem separation per track - vocals, drums, bass, other. Mute, solo, set the level of each stem and route any stem into the master FX rack - all straight from the deck.</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="f11.h">LIVE THROW FX</h3>
-        <p data-i18n="f11.p">Hold-to-engage pad rack with eleven throwable effects - flanger, crusher, transient, reverb, delay, glitch, beat-loop, phaser, roll, ping-pong and echo - plus filter sweeps, all beat-synced and quantized to the drop.</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="f12.h">MASTER FX RACK</h3>
-        <p data-i18n="f12.p">A lush FDN reverb, tempo-synced delay and a musicality layer on the master bus - with a live performance panel to ride them.</p>
+        <p data-i18n="f10.p">Offline 4-stem separation per track - vocals, drums, bass, other. Mute, solo, set the level of each stem and route any stem into LiveFX - all straight from the deck.</p>
       </div>
       <div class="card">
         <h3 data-i18n="f13.h">STUDIO-QUALITY EXPORT</h3>
         <p data-i18n="f13.p">Render your set to WAV, AIFF, FLAC, MP3 or AAC - at the right tempo and key, with full metadata. A faithful recording of exactly what you heard.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- FX: names the two systems directly, since these are the most searched-for
+       differentiators. "LiveFX" is the public name of the performance FX. -->
+  <section id="fx" class="features-section fx-section">
+    <div class="section-head">
+      <h2 data-i18n="fx.h2">INSERT FX + LIVEFX</h2>
+      <p data-i18n="fx.p">Two effect systems with two jobs: inserts shape each channel, LiveFX is what you play.</p>
+    </div>
+    <div class="feature-grid">
       <div class="card">
-        <h3 data-i18n="f14.h">MIDI CONTROLLER MAPPING</h3>
-        <p data-i18n="f14.p">Table-driven MIDI Learn with per-device profiles. Works out of the box with the Traktor Kontrol S2; map any controller - Traktor S4, Pioneer DDJ-FLX and more.</p>
+        <h3 data-i18n="fx.ins.h">INSERT FX - 13 NATIVE EFFECTS, 8 SLOTS PER CHANNEL</h3>
+        <p data-i18n="fx.ins.p">The PRO MIXER gives every channel 8 insert slots, EQ, high-pass and low-pass filters, trim and pan. The suite covers compressor, limiter, flanger, phaser, crusher, trance gate, chorus, delay, ping-pong, echo, spring, plate and room. Each effect has its own editor with factory and user presets, A/B and undo. Inserts save with your patterns, reorder by drag and drop, and can be automated from the piano roll.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="fx.live.h">LIVEFX - THROW EFFECTS YOU PLAY</h3>
+        <p data-i18n="fx.live.p">Hold a pad to throw flanger, phaser, crusher, trance gate, roll, beat-loop, glitch, delay, reverb, ping-pong or echo, plus filter sweeps. LiveFX stays locked to the beat and engages on the grid. A performance panel adds an XY pad, macro controls and HOLD. Sequencer channels, track decks and individual stems can all feed it, and it maps straight to your controller.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="controllers" class="features-section controllers-section">
+    <div class="section-head">
+      <h2 data-i18n="ctl.h2">MADE TO BE PLAYED BY HAND</h2>
+      <p data-i18n="ctl.p">GUR maps by action, not by device type, so DJ gear, keyboards, pads and fader banks can all drive it.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="card">
+        <h3 data-i18n="ctl.a.h">THE FLAGSHIPS</h3>
+        <p data-i18n="ctl.a.p">GUR was developed hands-on with the flagship controllers of Native Instruments, Pioneer DJ, Akai and Novation, including jog wheels, touch strips, pad grids and LED feedback.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="ctl.b.h">EVERY MAJOR BRAND</h3>
+        <p data-i18n="ctl.b.p">The built-in list has 177 devices in 8 categories, from Denon DJ, Numark, Rane, Reloop, Hercules, Allen &amp; Heath, Arturia, Roland, Korg, Behringer, Elektron and more. A few flagships ship with ready-made mappings; the rest are mapped with MIDI Learn. Not on the list? Add your own.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="ctl.c.h">SEVERAL AT ONCE</h3>
+        <p data-i18n="ctl.c.p">Each connected controller keeps its own mapping, so several can run together without colliding. Each device has its own profile, and GUR reconnects when you plug in.</p>
+      </div>
+    </div>
+    <p class="section-note" data-i18n="ctl.note">Brand names are trademarks of their owners and do not imply endorsement.</p>
+  </section>
+
+  <section id="connects" class="features-section connects-section">
+    <div class="section-head">
+      <h2 data-i18n="open.h2">WHAT GUR CONNECTS TO TODAY</h2>
+      <p data-i18n="open.p">GUR is a complete instrument on its own, and it already works with the rest of your setup.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="card">
+        <h3 data-i18n="open.a.h">YOUR DAW</h3>
+        <p data-i18n="open.a.p">GUR runs as a VST3 plugin inside your DAW, with Live Mode and host sync. The VST3 is included in every license.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="open.b.h">YOUR LIBRARY</h3>
+        <p data-i18n="open.b.p">Import from Traktor, Rekordbox and VirtualDJ, with BPM, beatgrids, keys and hot cues.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="open.c.h">YOUR FILES AND RIG</h3>
+        <p data-i18n="open.c.p">Export to WAV, AIFF, FLAC, MP3 or AAC. ASIO audio, separate line and cue outputs, and MIDI from any controller.</p>
+      </div>
+    </div>
+    <p class="section-note" data-i18n="open.not"><strong>Not yet:</strong> GUR cannot host third-party plugins today, and its DAW tier, GUR PRO, is still in development. Both are on the roadmap below.</p>
+  </section>
+
+  <section id="next" class="features-section next-section">
+    <div class="section-head">
+      <h2 data-i18n="next.h2">COMING IN THE NEXT UPDATE</h2>
+      <p data-i18n="next.p">Already built and free for every v1.x owner when it ships.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="card">
+        <h3 data-i18n="next.a.h">PERC DRUM SYNTH</h3>
+        <p data-i18n="next.a.p">14 pure-synthesis drum models and 32 genre-named kits in 7 categories.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="next.b.h">DEEPER LEAD, ARP AND PAD</h3>
+        <p data-i18n="next.b.p">LFOs, a mod envelope, an 8-slot mod matrix, arp mode, PERFORMER and STEPPER sequencing, and an on-board FX rack.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="next.c.h">CHANNEL FX ENGINES</h3>
+        <p data-i18n="next.c.p">Reworked delay, reverb and chorus, with synced delay and presets, plus a second modulation lane on every channel.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="next.d.h">GRID CONTROLLER SURFACES</h3>
+        <p data-i18n="next.d.p">Paged pattern, step and LiveFX layouts for Akai and Novation pad grids.</p>
       </div>
     </div>
   </section>
@@ -285,7 +380,7 @@
     <div class="pricing-grid">
 
       <div class="pricing-card pricing-card--pro">
-        <div class="pc-eyebrow" data-i18n="pc.eyebrow">GUR PRO - THE FULL INSTRUMENT</div>
+        <div class="pc-eyebrow" data-i18n="pc.eyebrow">GUR DJ - LIVE, DJ AND VST3</div>
 
         <div class="pc-price-row">
           <span class="pc-price">$69.99</span>
@@ -327,7 +422,7 @@
         </ul>
 
         <div class="pc-cta-row">
-          <a class="gur-btn gur-btn--primary gur-btn--lg" href="https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/61d40824-72fb-4e00-8f80-0bd035252667" data-i18n="pc.buy">BUY GUR PRO - $69.99</a>
+          <a class="gur-btn gur-btn--primary gur-btn--lg" href="https://21stcenturyartisan.lemonsqueezy.com/checkout/buy/61d40824-72fb-4e00-8f80-0bd035252667" data-i18n="pc.buy">BUY GUR DJ - $69.99</a>
         </div>
       </div>
 
@@ -382,6 +477,85 @@
     <p class="pc-status"><span class="pc-status-dot" aria-hidden="true"></span><span data-i18n="pc.status">Available now · Windows &amp; macOS</span></p>
   </section>
 
+  <section id="value" class="features-section value-section">
+    <div class="section-head">
+      <h2 data-i18n="val.h2">VALUE FOR MONEY</h2>
+      <p data-i18n="val.p">One one-time price for a sequencer instrument, 12 engines, four decks, stems, a pro mixer with inserts, LiveFX and a VST3.</p>
+    </div>
+    <table class="value-table">
+      <thead><tr><th data-i18n="val.th0">Software</th><th data-i18n="val.th1">Price</th></tr></thead>
+      <tbody>
+        <tr class="is-gur"><td>GUR DJ</td><td data-i18n="val.gur">$69.99 one-time, $129.99 from January 1</td></tr>
+        <tr><td>Ableton Live 12 Standard</td><td data-i18n="val.abl">USD 349 one-time</td></tr>
+        <tr><td>Serato DJ Pro</td><td data-i18n="val.ser">$299 one-time, or $11.99 per month</td></tr>
+        <tr><td>rekordbox Creative</td><td data-i18n="val.rek">$15 per month, billed yearly</td></tr>
+      </tbody>
+    </table>
+    <p class="section-note" data-i18n="val.note">Prices from each vendor's website on November 4, 2026. These products differ in scope, so compare what each one includes for your own use.</p>
+  </section>
+
+  <section id="roadmap" class="features-section roadmap-section">
+    <div class="section-head">
+      <h2 data-i18n="road.h2">ROADMAP - RELEASING BY JANUARY 1, 2027</h2>
+      <p data-i18n="road.p">GUR is opening up. This is the list of what is being built. Everything here except the new GUR PRO tier is a free update for GUR DJ and GUR LITE owners.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="card">
+        <h3 data-i18n="road.a.h">1. GUR PRO - THE NEW DAW TIER</h3>
+        <p data-i18n="road.a.p">A new higher tier that adds a post-production timeline and audio channels, with take lanes, track freeze and stem export, to everything in GUR DJ. In development now. Priced as DAW software, price to be announced. GUR DJ owners get 50% off.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="road.b.h">2. THIRD-PARTY VST3 EFFECTS</h3>
+        <p data-i18n="road.b.p">Load your own VST3 effects into PRO MIXER insert slots, next to the native suite.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="road.c.h">3. MIDI CLOCK</h3>
+        <p data-i18n="road.c.p">Send and receive MIDI clock, so GUR can stay in time with hardware and other software.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="road.d.h">4. MIDI FILE IMPORT AND EXPORT</h3>
+        <p data-i18n="road.d.p">Move patterns and piano-roll parts in and out of GUR.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="road.e.h">5. MORE READY-MADE MAPPINGS</h3>
+        <p data-i18n="road.e.p">Default mappings for more flagship controllers, so more gear works on first plug-in.</p>
+      </div>
+    </div>
+    <p class="section-note" data-i18n="road.after"><strong>After January 1:</strong> third-party VST3 instruments and Ableton Link. These have no date yet.</p>
+  </section>
+
+  <section id="faq" class="features-section faq-section">
+    <div class="section-head">
+      <h2 data-i18n="faq.h2">QUESTIONS</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="card">
+        <h3 data-i18n="faq.a.h">What is GUR?</h3>
+        <p data-i18n="faq.a.p">GUR is a DJ Live Sequencer Workstation by 21st Century Artisan: a desktop instrument for Windows and macOS that combines a live sequencer, 12 instrument engines, four DJ decks and stem separation. It is not related to FXpansion GURU.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="faq.b.h">Does GUR support VST plugins?</h3>
+        <p data-i18n="faq.b.p">GUR itself runs as a VST3 inside your DAW. It cannot load third-party plugins today. Hosting third-party VST3 effects is on the roadmap for release by January 1, 2027, as a free update.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="faq.c.h">Is GUR a closed ecosystem?</h3>
+        <p data-i18n="faq.c.p">Today GUR includes its own instruments and effects and does not host third-party plugins. It does run in any VST3 DAW, imports Traktor, Rekordbox and VirtualDJ libraries, exports standard audio files and works with MIDI controllers from any brand. The roadmap above lists what opens it further.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="faq.d.h">Is GUR a DAW?</h3>
+        <p data-i18n="faq.d.p">Not yet. GUR is a live performance instrument today. Its DAW tier, GUR PRO, is in development and on the roadmap for release by January 1, 2027. It adds a post-production timeline and audio channels and is priced as DAW software, with 50% off for GUR DJ owners.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="faq.e.h">Which MIDI controllers work with GUR?</h3>
+        <p data-i18n="faq.e.p">GUR maps by action, so any MIDI controller can be mapped with MIDI Learn. It was developed with the flagships of Native Instruments, Pioneer DJ, Akai and Novation, and its list has 177 devices across the major brands.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="faq.f.h">How much does GUR cost?</h3>
+        <p data-i18n="faq.f.p">GUR DJ is $69.99 and GUR LITE is $39.99 at launch pricing, rising to $129.99 and $69.99 from January 1. Both are one-time purchases with no subscription, all v1.x updates free and a 30-day full-featured trial. GUR DJ was previously sold as GUR PRO. The name GUR PRO now belongs to the upcoming DAW tier, which will be priced separately, with 50% off for GUR DJ owners.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- PLATFORMS -->
   <section class="platforms-section">
     <div class="section-head">
@@ -416,11 +590,11 @@
        begin the built-in 30-day trial. No checkout or license key is needed. -->
   <section id="beta" class="beta-section">
     <div class="beta-card">
-      <div class="beta-eyebrow" data-i18n="beta.eyebrow">EARLY ACCESS · BEFORE SEPTEMBER 9</div>
+      <div class="beta-eyebrow" data-i18n="beta.eyebrow">EARLY ACCESS</div>
       <h2 class="beta-title" data-i18n="beta.title">BECOME A BETA TESTER</h2>
       <p class="beta-lede" data-i18n="beta.lede">
-        Beta testing is <strong>free</strong>. Apply before the September 9 launch,
-        download GUR directly, and explore the complete instrument on your own rig.
+        Beta testing is <strong>free</strong>. Apply, download GUR directly, and
+        explore the complete instrument on your own rig.
       </p>
       <!-- The beta CTA now leads to the intake questionnaire (beta-intake.html),
            which gathers the applicant's profile and posts to
@@ -460,7 +634,7 @@
   </div>
 </footer>
 
-<script src="js/i18n.js?v=20260903a"></script>
-<script src="js/main.js?v=20260903a"></script>
+<script src="js/i18n.js?v=20261105a"></script>
+<script src="js/main.js?v=20261105a"></script>
 </body>
 </html>

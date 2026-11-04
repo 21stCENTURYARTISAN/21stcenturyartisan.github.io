@@ -1524,3 +1524,35 @@ h2, h3 {
    reading "LAUNCHING / SEPTEMBER 9 / IT'S LIVE". Retire them together. */
 .countdown-card.is-live .cd-eyebrow,
 .countdown-card.is-live .cd-date { display:none; }
+
+/* ── NOV 2026 SECTIONS: FX, controllers, connects, next, value, roadmap, FAQ ─ */
+.section-note {
+  max-width: var(--maxw);
+  margin: 18px auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.section-note strong { color: var(--text); }
+.fx-section .card h3 { color: var(--accent); }
+.value-table {
+  width: 100%;
+  max-width: 740px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.value-table th,
+.value-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: start;
+  color: var(--muted);
+}
+.value-table th { color: var(--text); font-weight: 600; }
+.value-table .is-gur td { color: var(--accent); font-weight: 600; }
+@media (max-width: 480px) {
+  .value-table { font-size: 14px; }
+  .value-table th, .value-table td { padding: 10px 8px; }
+}
