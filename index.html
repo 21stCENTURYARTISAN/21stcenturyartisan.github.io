@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="title.index">GUR - DJ Live Sequencer Workstation · 21st Century Artisan</title>
-  <meta name="description" content="GUR is a DJ Live Sequencer Workstation for Windows and macOS: 12 instruments, 8 live channels, four decks, stems, 13 insert FX, LiveFX and MIDI mapping for controllers from every major brand. Standalone or VST3.">
+  <meta name="description" content="GUR is a DJ Live Sequencer Workstation for Windows and macOS: 12 instruments, 8 live channels, four decks, stems, 13 insert FX, LiveFX, VST3 effect and instrument hosting, and MIDI mapping for controllers from every major brand. Standalone or VST3.">
   <link rel="canonical" href="https://www.21stcenturyartisan.com/">
   <meta name="theme-color" content="#0b0f15">
   <meta property="og:title" content="GUR - DJ Live Sequencer Workstation">
-  <meta property="og:description" content="12 instruments, 8 live channels, four decks, stems, insert FX, LiveFX and MIDI mapping. Standalone or VST3. By 21st Century Artisan.">
+  <meta property="og:description" content="12 instruments, 8 live channels, four decks, stems, insert FX, LiveFX, VST3 plugin hosting and MIDI mapping. Standalone or VST3. By 21st Century Artisan.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.21stcenturyartisan.com/">
   <meta property="og:image" content="https://www.21stcenturyartisan.com/images/gur-live.png">
@@ -30,7 +30,7 @@
     "applicationSubCategory": "DJ and live performance software",
     "operatingSystem": "Windows 10, Windows 11, macOS",
     "softwareVersion": "1.0.212",
-    "description": "A desktop DJ Live Sequencer Workstation with 12 instrument engines, 8 live channels, four decks, stem separation, 13 mixer insert effects, LiveFX performance effects and MIDI mapping. Runs standalone or as a VST3.",
+    "description": "A desktop DJ Live Sequencer Workstation with 12 instrument engines, 8 live channels, four decks, stem separation, 13 mixer insert effects, LiveFX performance effects, third-party VST3 effect and instrument hosting, and MIDI mapping. Runs standalone or as a VST3.",
     "featureList": [
       "Polymetric 32-step sequencer with sample-accurate timing",
       "256-bar piano roll with automation",
@@ -38,9 +38,10 @@
       "Four decks for sequencer patterns or audio tracks",
       "Offline 4-stem separation",
       "PRO MIXER with 8 insert slots per channel and 13 native insert effects",
+      "Hosts third-party VST3 effects and instruments, with automatic delay compensation",
       "LiveFX beat-synced performance effects",
       "Library import from Traktor, Rekordbox and VirtualDJ",
-      "MIDI Learn with per-device profiles",
+      "MIDI Learn with per-device profiles, and plugin knobs mapped automatically",
       "VST3 plugin included"
     ],
     "author": { "@type": "Person", "name": "Nadav Hecht Drayson" },
@@ -64,6 +65,7 @@
     <a href="#try"      class="header-link" data-i18n="nav.try">Try It</a>
     <a href="#inside"   class="header-link" data-i18n="nav.inside">Inside</a>
     <a href="#fx"       class="header-link" data-i18n="nav.fx">FX</a>
+    <a href="#plugins"  class="header-link" data-i18n="nav.plugins">Plugins</a>
     <a href="#roadmap"  class="header-link" data-i18n="nav.roadmap">Roadmap</a>
     <a href="#pricing"  class="header-link" data-i18n="nav.pricing">Pricing</a>
     <a href="academy.html" class="header-link" data-i18n="nav.academy">Academy</a>
@@ -90,8 +92,8 @@
     <h1 class="hero-tagline">DJ LIVE SEQUENCER WORKSTATION</h1>
     <p class="hero-lede" data-i18n="hero.lede">
       A complete instrument for live performance - 12 instruments, 8 live channels,
-      four decks, insert FX, LiveFX and a sample-accurate sequencer. Standalone, or as
-      a VST3 inside your DAW.
+      four decks, insert FX, LiveFX and a sample-accurate sequencer - and it hosts your
+      own VST3 effects and instruments. Standalone, or as a VST3 inside your DAW.
     </p>
     <!-- LAUNCH CTA: buy outright, or start the 30-day trial. The browser demo
          drops to a tertiary text link - it is still the fastest way to hear the
@@ -283,16 +285,51 @@
   <section id="fx" class="features-section fx-section">
     <div class="section-head">
       <h2 data-i18n="fx.h2">INSERT FX + LIVEFX</h2>
-      <p data-i18n="fx.p">Two effect systems with two jobs: inserts shape each channel, LiveFX is what you play.</p>
+      <p data-i18n="fx.p">Two effect systems with two jobs: inserts shape each channel - native or your own VST3s - and LiveFX is what you play.</p>
     </div>
     <div class="feature-grid">
       <div class="card">
-        <h3 data-i18n="fx.ins.h">INSERT FX - 13 NATIVE EFFECTS, 8 SLOTS PER CHANNEL</h3>
-        <p data-i18n="fx.ins.p">The PRO MIXER gives every channel 8 insert slots, EQ, high-pass and low-pass filters, trim and pan. The suite covers compressor, limiter, flanger, phaser, crusher, trance gate, chorus, delay, ping-pong, echo, spring, plate and room. Each effect has its own editor with factory and user presets, A/B and undo. Inserts save with your patterns, reorder by drag and drop, and can be automated from the piano roll.</p>
+        <h3 data-i18n="fx.ins.h">INSERT FX - 13 NATIVE EFFECTS + YOUR VST3s, 8 SLOTS PER CHANNEL</h3>
+        <p data-i18n="fx.ins.p">The PRO MIXER gives every channel 8 insert slots, EQ, high-pass and low-pass filters, trim and pan. The suite covers compressor, limiter, flanger, phaser, crusher, trance gate, chorus, delay, ping-pong, echo, spring, plate and room. Each effect has its own editor with factory and user presets, A/B and undo. Inserts save with your patterns, reorder by drag and drop, and can be automated from the piano roll. Any slot can also hold one of your own VST3 effects.</p>
       </div>
       <div class="card">
         <h3 data-i18n="fx.live.h">LIVEFX - THROW EFFECTS YOU PLAY</h3>
         <p data-i18n="fx.live.p">Hold a pad to throw flanger, phaser, crusher, trance gate, roll, beat-loop, glitch, delay, reverb, ping-pong or echo, plus filter sweeps. LiveFX stays locked to the beat and engages on the grid. A performance panel adds an XY pad, macro controls and HOLD. Sequencer channels, track decks and individual stems can all feed it, and it maps straight to your controller.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLUGINS: third-party VST3 hosting - effects in the PRO MIXER inserts,
+       instruments on live channels, delay compensation, automation, controller knobs. -->
+  <section id="plugins" class="features-section plugins-section">
+    <div class="section-head">
+      <h2 data-i18n="plug.h2">YOUR PLUGINS, INSIDE GUR</h2>
+      <p data-i18n="plug.p">GUR hosts your third-party VST3 effects and instruments, right next to its own engines.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="card">
+        <h3 data-i18n="plug.a.h">VST3 EFFECTS IN EVERY INSERT SLOT</h3>
+        <p data-i18n="plug.a.p">Load your own VST3 effects into any of the PRO MIXER's 8 insert slots per channel, mixed freely with the native suite. Each plugin opens in its own window, and its settings save with your project.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="plug.b.h">VST3 INSTRUMENTS</h3>
+        <p data-i18n="plug.b.p">Put a third-party VST3 instrument on a live channel and play it from GUR's sequencer, piano roll and your controller, like any built-in engine.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="plug.c.h">AUTOMATIC DELAY COMPENSATION</h3>
+        <p data-i18n="plug.c.p">Plugins that add latency stay in time with the rest of the set, in Live and DJ mode alike. Bypassing a plugin never shifts the timing.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="plug.d.h">READY WHEN YOU ARE</h3>
+        <p data-i18n="plug.d.p">The plugins a project uses load in the background as it opens, so switching patterns does not stall on a plugin loading.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="plug.e.h">PLUGIN AUTOMATION</h3>
+        <p data-i18n="plug.e.p">Record any plugin parameter just by turning it, or draw it in the piano roll's automation lanes.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="plug.f.h">ALREADY MAPPED TO YOUR KNOBS</h3>
+        <p data-i18n="plug.f.p">The first time you load a plugin, GUR picks its most useful controls and lays them out across up to 48 controller knobs, in banks of 8. Any MIDI controller can drive them. Re-assign a knob with one click in the plugin window, and the layout is remembered for that plugin everywhere.</p>
       </div>
     </div>
   </section>
@@ -327,7 +364,7 @@
     <div class="feature-grid">
       <div class="card">
         <h3 data-i18n="open.a.h">YOUR DAW</h3>
-        <p data-i18n="open.a.p">GUR runs as a VST3 plugin inside your DAW, with Live Mode and host sync. The VST3 is included in every license.</p>
+        <p data-i18n="open.a.p">GUR runs as a VST3 plugin inside your DAW, with Live Mode and host sync, and it hosts your own VST3 effects and instruments. The VST3 is included in every license.</p>
       </div>
       <div class="card">
         <h3 data-i18n="open.b.h">YOUR LIBRARY</h3>
@@ -338,7 +375,7 @@
         <p data-i18n="open.c.p">Export to WAV, AIFF, FLAC, MP3 or AAC. ASIO audio, separate line and cue outputs, and MIDI from any controller.</p>
       </div>
     </div>
-    <p class="section-note" data-i18n="open.not"><strong>Not yet:</strong> GUR cannot host third-party plugins today, and its DAW tier, GUR PRO, is still in development. Both are on the roadmap below.</p>
+    <p class="section-note" data-i18n="open.not"><strong>Not yet:</strong> GUR's DAW tier, GUR PRO, is still in development. It is on the roadmap below.</p>
   </section>
 
   <section id="next" class="features-section next-section">
@@ -409,6 +446,10 @@
           </li>
           <li>
             <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pc.f6">Hosts your VST3 effects and instruments</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
             <span data-i18n="pc.f3">All v1.x updates free</span>
           </li>
           <li>
@@ -451,6 +492,10 @@
           </li>
           <li>
             <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
+            <span data-i18n="pcl.f6">Hosts your VST3 effects and instruments</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8 L6.5 11.5 L13 5"/></svg>
             <span data-i18n="pcl.f2">Sequencer, drums, synths and FX</span>
           </li>
           <li>
@@ -480,7 +525,7 @@
   <section id="value" class="features-section value-section">
     <div class="section-head">
       <h2 data-i18n="val.h2">VALUE FOR MONEY</h2>
-      <p data-i18n="val.p">One one-time price for a sequencer instrument, 12 engines, four decks, stems, a pro mixer with inserts, LiveFX and a VST3.</p>
+      <p data-i18n="val.p">One one-time price for a sequencer instrument, 12 engines, four decks, stems, a pro mixer with inserts, VST3 plugin hosting, LiveFX and a VST3.</p>
     </div>
     <table class="value-table">
       <thead><tr><th data-i18n="val.th0">Software</th><th data-i18n="val.th1">Price</th></tr></thead>
@@ -505,23 +550,19 @@
         <p data-i18n="road.a.p">A new higher tier that adds a post-production timeline and audio channels, with take lanes, track freeze and stem export, to everything in GUR DJ. In development now. Priced as DAW software, price to be announced. GUR DJ owners get 50% off.</p>
       </div>
       <div class="card">
-        <h3 data-i18n="road.b.h">2. THIRD-PARTY VST3 EFFECTS</h3>
-        <p data-i18n="road.b.p">Load your own VST3 effects into PRO MIXER insert slots, next to the native suite.</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="road.c.h">3. MIDI CLOCK</h3>
+        <h3 data-i18n="road.c.h">2. MIDI CLOCK</h3>
         <p data-i18n="road.c.p">Send and receive MIDI clock, so GUR can stay in time with hardware and other software.</p>
       </div>
       <div class="card">
-        <h3 data-i18n="road.d.h">4. MIDI FILE IMPORT AND EXPORT</h3>
+        <h3 data-i18n="road.d.h">3. MIDI FILE IMPORT AND EXPORT</h3>
         <p data-i18n="road.d.p">Move patterns and piano-roll parts in and out of GUR.</p>
       </div>
       <div class="card">
-        <h3 data-i18n="road.e.h">5. MORE READY-MADE MAPPINGS</h3>
+        <h3 data-i18n="road.e.h">4. MORE READY-MADE MAPPINGS</h3>
         <p data-i18n="road.e.p">Default mappings for more flagship controllers, so more gear works on first plug-in.</p>
       </div>
     </div>
-    <p class="section-note" data-i18n="road.after"><strong>After January 1:</strong> third-party VST3 instruments and Ableton Link. These have no date yet.</p>
+    <p class="section-note" data-i18n="road.after"><strong>After January 1:</strong> Ableton Link. It has no date yet.</p>
   </section>
 
   <section id="faq" class="features-section faq-section">
@@ -535,11 +576,11 @@
       </div>
       <div class="card">
         <h3 data-i18n="faq.b.h">Does GUR support VST plugins?</h3>
-        <p data-i18n="faq.b.p">GUR itself runs as a VST3 inside your DAW. It cannot load third-party plugins today. Hosting third-party VST3 effects is on the roadmap for release by January 1, 2027, as a free update.</p>
+        <p data-i18n="faq.b.p">Yes, both ways. GUR runs as a VST3 inside your DAW, and it hosts third-party VST3 effects in the PRO MIXER's insert slots and VST3 instruments on its live channels, with automatic delay compensation, automation and controller mapping.</p>
       </div>
       <div class="card">
         <h3 data-i18n="faq.c.h">Is GUR a closed ecosystem?</h3>
-        <p data-i18n="faq.c.p">Today GUR includes its own instruments and effects and does not host third-party plugins. It does run in any VST3 DAW, imports Traktor, Rekordbox and VirtualDJ libraries, exports standard audio files and works with MIDI controllers from any brand. The roadmap above lists what opens it further.</p>
+        <p data-i18n="faq.c.p">No. GUR includes its own instruments and effects, and it also hosts your third-party VST3 effects and instruments. It runs in any VST3 DAW, imports Traktor, Rekordbox and VirtualDJ libraries, exports standard audio files and works with MIDI controllers from any brand. The roadmap above lists what opens it further.</p>
       </div>
       <div class="card">
         <h3 data-i18n="faq.d.h">Is GUR a DAW?</h3>
